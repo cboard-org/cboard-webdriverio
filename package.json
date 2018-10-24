@@ -1,0 +1,21 @@
+{
+  "name": "cboard-webdriverio",
+  "version": "0.0.1",
+  "description": "UI tests for Cboard project",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cboard-org/cboard-webdriverio.git"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/wdio wdio.conf.js"
+  },
+  "dependencies": {
+    "webdriverio": "*",
+    "mocha": "*",
+    "chai": "*"
+  },
+  "devDependencies": {
+    "wdio-mocha-framework": "^0.3.10"
+  }
+}
