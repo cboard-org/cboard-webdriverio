@@ -1,7 +1,17 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+var welcomeAppPage = require('../../pages/welcome.app.page');
+var assert = require('assert');
 
-
+describe('Welcome page', function() {
+    it('should successfully login a valid user', function () {
+        welcomeAppPage.open();
+        
+    });
+    it('should reject a login with an valid user', function () {
+        welcomeAppPage.open();
+        
+    });
+    it('should successfully signup a valid user', function () {
+        welcomeAppPage.open();
+        
+    });
+});
