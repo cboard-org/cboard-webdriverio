@@ -1,0 +1,24 @@
+{
+  "name": "cboard-webdriverio",
+  "version": "0.0.1",
+  "description": "UI tests for Cboard project",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cboard-org/cboard-webdriverio.git"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/wdio wdio.conf.js"
+  },
+  "dependencies": {
+    "chai": "*",
+    "mocha": "*",
+    "selenium-standalone": "^6.15.3",
+    "wdio-chromedriver-service": "*",
+    "webdriverio": "*"
+  },
+  "devDependencies": {
+    "chromedriver": "^2.43.1",
+    "wdio-mocha-framework": "^0.3.10"
+  }
+}
