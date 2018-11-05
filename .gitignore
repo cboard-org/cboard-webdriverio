@@ -59,4 +59,13 @@ typings/
 
 # next.js build output
 .next
+
+#netbeans
 nbproject/
+
+# visual studio 
+.vs
+obj/
+errorShots/
+*.sln
+*.njsproj
