@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "chai": "*",
+    "dotenv": "^6.1.0",
     "mocha": "*",
     "selenium-standalone": "^6.15.3",
     "wdio-chromedriver-service": "*",
