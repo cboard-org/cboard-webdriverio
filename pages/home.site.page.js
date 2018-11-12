@@ -17,7 +17,7 @@ var homePage = Object.create(page, {
      * define or overwrite page methods
      */
     open: { value: function() {
-        page.open.call(this, 'https://www.cboard.io/');
+        page.open.call(this, '/', 'https://www.cboard.io');
     } },
 
     clickOnStartCboard: { value: function () {
