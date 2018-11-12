@@ -1,3 +1,4 @@
+var config = require('../../config');
 var welcomeAppPage = require('../../pages/welcome.app.page');
 var assert = require('assert');
 
@@ -34,8 +35,8 @@ describe('Welcome page', function() {
         const password = browser.element(ELEMENTS.loginPasswordInput);
         const loginButton = browser.element(ELEMENTS.loginSubmitButton);
 
-        email.setValue(process.env.LOGIN_APP_SPEC_USERNAME || 'missing LOGIN_APP_SPEC_USERNAME env var');
-        password.setValue(process.env.LOGIN_APP_SPEC_PASSWORD || 'missing LOGIN_APP_SPEC_PASSWORD env var');
+        email.setValue(config.login.username);
+        password.setValue(config.login.password);
         loginButton.click();
 
         browser.pause(5000);

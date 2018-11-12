@@ -17,7 +17,7 @@ var welcomeAppPage = Object.create(page, {
      * define or overwrite page methods
      */
     open: { value: function() {
-        page.open.call(this, 'https://app.cboard.io/');
+        page.open.call(this, '/');
     } },
 
     loginUser: { value: function () {
