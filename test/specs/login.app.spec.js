@@ -1,5 +1,6 @@
 var welcomeAppPage = require('../../pages/welcome.app.page');
-var assert = require('assert');
+var rootBoardPage = require('../../pages/root.app.page');
+var assert = require('chai').assert;
 
 describe('Welcome page', function() {
      it('should display the valid welcome message', function () {
@@ -7,8 +8,8 @@ describe('Welcome page', function() {
         
     });
     it('should successfully login a valid user', function () {
-        welcomeAppPage.open();
-        
+        welcomeAppPage.waitForPage();
+        welcomeAppPage.loginUser('anything@cboard.io', '1122');
     });
     it('should reject a login with an invalid user', function () {
         welcomeAppPage.open();
