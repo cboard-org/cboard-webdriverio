@@ -1,6 +1,7 @@
 const page = require('./page');
 
-const rootAppPage = Object.create(page, {
+
+const createPictoAppPage = Object.create(page, {
     /**
      * define or overwrite page methods
      */
@@ -9,4 +10,4 @@ const rootAppPage = Object.create(page, {
     } },
 });
 
-module.exports = rootAppPage;
+module.exports = createPictoAppPage;

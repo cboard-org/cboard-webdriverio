@@ -1,3 +1,29 @@
+const path = require('path');
+const fs = require('fs');
+
+// https://blog.kevinlamping.com/downloading-files-using-webdriverio/
+// Store the directory path in a global, which allows us to access this path inside our tests
+global.downloadDir = path.join(__dirname, 'tempDownload');
+
+const rmdir = (dir) => {
+    const list = fs.readdirSync(dir);
+    for (let i = 0; i < list.length; i++) {
+        const filename = path.join(dir, list[i]);
+        const stat = fs.statSync(filename);
+
+        if (filename == '.' || filename == '..') {
+            // pass these files
+        } else if (stat.isDirectory()) {
+            // rmdir recursively
+            rmdir(filename);
+        } else {
+            // rm fiilename
+            fs.unlinkSync(filename);
+        }
+    }
+    fs.rmdirSync(dir);
+}
+
 exports.config = {
     
     //
@@ -44,7 +70,13 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'chrome'
+        browserName: 'chrome',
+        // this overrides the default chrome download directory with our temporary one
+        chromeOptions: {
+            prefs: {
+                'download.default_directory': downloadDir
+            }
+        }
     }],
     //
     // ===================
@@ -129,7 +161,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 20000
+        timeout: 120000
     },
     //
     // =====
@@ -146,6 +178,13 @@ exports.config = {
      */
     // onPrepare: function (config, capabilities) {
     // },
+    onPrepare: function (config, capabilities) {
+        // make sure download directory exists
+        if (!fs.existsSync(downloadDir)){
+            // if it doesn't exist, create it
+            fs.mkdirSync(downloadDir);
+        }
+    },
     /**
      * Gets executed just before initialising the webdriver session and test framework. It allows you
      * to manipulate configurations depending on the capability or spec.
@@ -242,6 +281,9 @@ exports.config = {
      */
     // onComplete: function(exitCode, config, capabilities) {
     // }
+    onComplete: function() {
+        rmdir(downloadDir)
+    },
 //    port: '9515',
 //    path: '/',
 //  // ...
