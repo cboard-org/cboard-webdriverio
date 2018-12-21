@@ -12,15 +12,15 @@ describe('Welcome page', function() {
         welcomeAppPage.loginUser('anything@cboard.io', '1122');
     });
     it('should reject a login with an invalid user', function () {
-        welcomeAppPage.open();
+        welcomeAppPage.waitForPage();
         
     });
     it('should successfully signup a new valid user', function () {
-        welcomeAppPage.open();
+        welcomeAppPage.waitForPage();
         
     });    
     it('should skip login when user press skip button', function () {
-        welcomeAppPage.open();
+        welcomeAppPage.waitForPage();
         
     });
 });
