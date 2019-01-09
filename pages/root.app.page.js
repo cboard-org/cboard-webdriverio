@@ -5,7 +5,7 @@ var rootAppPage = Object.create(page, {
     /**
      * define elements
      */
-    rootboard: { get: function () { return browser.element('h2=home'); } },
+    rootboard: { get: function () { return $('=home'); } },
 
     /**
      * define or overwrite page methods
@@ -19,7 +19,9 @@ var rootAppPage = Object.create(page, {
 
     isRootBoard: {
         value: function () {
-            return browser.isVisible('h2=home');
+            browser.pause(15000);
+           const roo =  $('h2=home'); 
+            return roo.isDisplayed();
         }
     }
 });

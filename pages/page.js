@@ -8,6 +8,10 @@ Page.prototype.open = function (path) {
     browser.url(path);
 }
 
+Page.prototype.reload = function () {
+    browser.reloadSession();
+}
+
 Page.prototype.waitForPage = function (reload = false) {
     if (reload) {
         browser.reload();
