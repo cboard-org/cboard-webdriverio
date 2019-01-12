@@ -14,12 +14,17 @@ var welcomeAppPage = Object.create(page, {
   },
   signup: {
     get: function() {
-      return $('button=SIGN UP');
+      return $('button=Sign Up');
+    }
+  },
+  signmeup: {
+    get: function() {
+      return $('button=Sign me up');
     }
   },
   skip: {
     get: function() {
-      return $('=SKIP FOR NOW');
+      return $('button=Skip for now');
     }
   },
   title: {
@@ -37,6 +42,11 @@ var welcomeAppPage = Object.create(page, {
       return $('=GITHUB');
     }
   },
+  nameInput: {
+    get: function() {
+      return $('//*[@name="name"]');
+    }
+  },
   usernameInput: {
     get: function() {
       return $('//*[@name="email"]');
@@ -45,6 +55,11 @@ var welcomeAppPage = Object.create(page, {
   passwordInput: {
     get: function() {
       return $('//*[@name="password"]');
+    }
+  },
+  passwordConfirmInput: {
+    get: function() {
+      return $('//*[@name="passwordConfirm"]');
     }
   },
   loginButton: {
@@ -89,8 +104,13 @@ var welcomeAppPage = Object.create(page, {
   },
 
   signupUser: {
-    value: function() {
+    value: function(name, username, password) {
       this.signup.click();
+      this.nameInput.setValue(name);
+      this.usernameInput.setValue(username);
+      this.passwordInput.setValue(password);
+      this.passwordConfirmInput.setValue(password);
+      this.signmeup.click();
     }
   },
 
