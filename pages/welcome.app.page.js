@@ -27,15 +27,27 @@ var welcomeAppPage = Object.create(page, {
     reload: { value: function() {
         page.reload.call(this);
     } },
+
     loginUser: {
-        value: function (username, password) {
+        value: function (username, password, loginError) {
             this.login.click();
             this.usernameInput.setValue(username);
             this.passwordInput.setValue(password);
             this.loginButton.click();
-            rootBoardPage.checkTitle();
+            if(loginError){
+                
+            } else {
+                rootBoardPage.checkTitle();
+            }
         } },
-
+    
+    loginSkip: {
+        value: function () {
+            this.skip.click();
+            rootBoardPage.checkTitle();
+        }
+    },
+    
     signupUser: { value: function () {
         this.signup.click();
     } },
