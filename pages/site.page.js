@@ -1,11 +1,7 @@
-function Page () {
-}
+function Page() {}
 
-Page.prototype.open = function (path) {
-    browser.url(path);
-}
+Page.prototype.open = function(path) {
+  browser.url(path);
+};
 
-module.exports = new Page()
-
-
-
+module.exports = new Page();

@@ -8,7 +8,8 @@
     "url": "git@github.com:cboard-org/cboard-webdriverio.git"
   },
   "scripts": {
-    "test": "./node_modules/.bin/wdio wdio.conf.js"
+    "test": "./node_modules/.bin/wdio wdio.conf.js",
+    "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}"
   },
   "dependencies": {
     "chai": "4.2.0",
