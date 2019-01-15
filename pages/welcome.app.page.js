@@ -1,4 +1,5 @@
 var assert = require('chai').assert;
+var expect = require('chai').expect;
 var page = require('./page');
 
 var rootBoardPage = require('./root.app.page');
@@ -67,6 +68,11 @@ var welcomeAppPage = Object.create(page, {
       return $('//button[@type="submit"]');
     }
   },
+  signupConfirmMessage: {
+    get: function() {
+      return $('div.SignUp__status.SignUp__status--success');
+    }
+  },
 
   /**
    * define or overwrite page methods
@@ -111,6 +117,8 @@ var welcomeAppPage = Object.create(page, {
       this.passwordInput.setValue(password);
       this.passwordConfirmInput.setValue(password);
       this.signmeup.click();
+      var msg = browser.$('div.SignUp__status.SignUp__status--success').getText();
+      expect(msg).to.contain('successfully');
     }
   },
 

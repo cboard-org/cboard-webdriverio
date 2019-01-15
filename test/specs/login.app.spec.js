@@ -4,6 +4,7 @@ var assert = require('chai').assert;
 var randomstring = require('randomstring');
 
 describe('Welcome page', function() {
+    
   beforeEach(function() {
     welcomeAppPage.open();
   });
@@ -30,6 +31,6 @@ describe('Welcome page', function() {
         length: 16,
         charset: 'alphabetic'
       }) + '@cboard.io';
-    welcomeAppPage.signupUser(newUser, '1122');
+    welcomeAppPage.signupUser(newUser, newUser, '1122');
   });
 });

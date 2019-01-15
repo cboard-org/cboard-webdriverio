@@ -15,7 +15,6 @@
     "chai": "4.2.0",
     "dotenv": "6.2.0",
     "mocha": "5.2.0",
-    "selenium-standalone": "^6.15.3",
     "wdio-chromedriver-service": "0.1.5",
     "webdriverio": "5.0.0",
     "randomstring": "1.1.5"
@@ -28,6 +27,7 @@
     "@wdio/mocha-framework": "^5.0.0",
     "@wdio/sync": "^5.0.0",
     "@wdio/cli": "5.0.0",
+    "@wdio/selenium-standalone-service": "^5.0.0",
     "chromedriver": "^2.45.0",
     "prettier": "1.15.3"
   }
