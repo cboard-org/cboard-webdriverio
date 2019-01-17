@@ -18,7 +18,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/*.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -125,11 +125,15 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
+        compilers: [
+            'ts-node/register',
+            'tsconfig-paths/register'
+        ],
         ui: 'bdd',
         timeout: 60000
     },    
     
-    reporters: ['dot', 'concise'],
+    reporters: ['dot', 'concise', 'spec'],
     services: ['selenium-standalone'],
     //
     // =====
@@ -164,7 +168,8 @@ exports.config = {
     before: function (capabilities, specs) {
         var chai = require('chai');
         global.expect = chai.expect;
-        chai.Should();
+        chai.Should(); 
+        require('ts-node/register');
     },
     /**
      * Runs before a WebdriverIO command gets executed.

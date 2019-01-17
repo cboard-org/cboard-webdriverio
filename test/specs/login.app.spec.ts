@@ -1,12 +1,10 @@
-var welcomeAppPage = require('../../pages/welcome.app.page');
-var rootBoardPage = require('../../pages/root.app.page');
-var assert = require('chai').assert;
-var randomstring = require('randomstring');
+import WelcomeAppPage from 'pages/welcome.app.page';
+import { assert } from 'chai';
+import randomstring from 'randomstring';
 
 describe('Welcome page', function() {
-    
   beforeEach(function() {
-    welcomeAppPage.open();
+    WelcomeAppPage.open();
   });
 
   afterEach(function() {
@@ -14,15 +12,15 @@ describe('Welcome page', function() {
   });
 
   it('should successfully login a valid user', function() {
-    welcomeAppPage.loginUser('anything@cboard.io', '1122');
+    WelcomeAppPage.loginUser('anything@cboard.io', '1122');
   });
 
   it('should reject a login with an invalid user', function() {
-    welcomeAppPage.loginUser('nothing@cboard.io', '1122', true);
+    WelcomeAppPage.loginUser('nothing@cboard.io', '1122', true);
   });
 
   it('should skip login when user presses on skip button', function() {
-    welcomeAppPage.loginSkip();
+    WelcomeAppPage.loginSkip();
   });
 
   it('should successfully signup a valid user', function() {
@@ -31,6 +29,6 @@ describe('Welcome page', function() {
         length: 16,
         charset: 'alphabetic'
       }) + '@cboard.io';
-    welcomeAppPage.signupUser(newUser, newUser, '1122');
+    WelcomeAppPage.signupUser(newUser, newUser, '1122');
   });
 });

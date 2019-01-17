@@ -1,15 +1,15 @@
-var homePage = require('../../pages/home.site.page');
-var assert = require('assert');
+import HomePage from 'pages/home.site.page';
+import { assert } from 'chai';
 
 describe('cboard.io page', function() {
   it('should have the right title', function() {
-    homePage.open();
+    HomePage.open();
     var title = browser.getTitle();
     assert.equal(title, 'Home | Cboard - Communication Board');
   });
   it('should open the app', function() {
-    homePage.open();
-    homePage.clickOnStartCboard();
+    HomePage.open();
+    HomePage.clickOnStartCboard();
     var title = browser.getTitle();
     assert.equal(title, 'Cboard - AAC Communication Board');
   });

@@ -1,5 +1,5 @@
-var settingAppPage = require('../../pages/settings.app.page');
-var assert = require('assert');
+import HomePage from 'pages/home.site.page';
+import { assert } from 'chai';
 
 describe('Import board option', function() {
   it('should import and immediately display the board', function() {});

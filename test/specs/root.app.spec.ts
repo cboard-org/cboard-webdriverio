@@ -1,9 +1,9 @@
-var rootAppPage = require('../../pages/root.app.page');
-var assert = require('assert');
+import RootAppPage from 'pages/root.app.page';
+import { assert } from 'chai';
 
 describe('Root board page', function() {
   it('should display the valid page title', function() {
-    rootAppPage.open();
+    RootAppPage.open();
   });
   it('should unblock settings after 4 clicks on lock icon', function() {});
   it('should display all icons and bars after unlock', function() {});
