@@ -1,4 +1,5 @@
 import { assert } from 'chai';
+import { expect } from 'chai';
 import Page from 'pages/Page';
 
 class RootAppPage extends Page {
@@ -8,7 +9,12 @@ class RootAppPage extends Page {
   get rootboard() {
     return $('=home');
   }
-
+    get unlock() {
+        return $('//button[@title="Unlock"]');
+    }
+    get lock() {
+        return $('//button[@title="Lock"]');
+    }
   /**
    * define or overwrite page methods
    */
@@ -20,10 +26,17 @@ class RootAppPage extends Page {
     assert.equal(title, 'Cboard - AAC Communication Board');
   }
   isRootBoard() {
-    browser.pause(15000);
     const roo = $('h2=home');
     return roo.isDisplayed();
   }
+    unblockSettings() {
+        expect(this.lock.isDisplayed()).to.be.false;
+        this.unlock.click();
+        this.unlock.click();
+        this.unlock.click();
+        this.unlock.click();
+        expect(this.lock.isDisplayed()).to.be.true;
+    }
 }
 
 export default new RootAppPage();
