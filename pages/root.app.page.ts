@@ -9,12 +9,12 @@ class RootAppPage extends Page {
   get rootboard() {
     return $('=home');
   }
-    get unlock() {
-        return $('//button[@title="Unlock"]');
-    }
-    get lock() {
-        return $('//button[@title="Lock"]');
-    }
+  get unlock() {
+    return $('//button[@aria-label="Unlock"]');
+  }
+  get lock() {
+    return $('//button[@aria-label="Lock"]');
+  }
   /**
    * define or overwrite page methods
    */
@@ -29,14 +29,18 @@ class RootAppPage extends Page {
     const roo = $('h2=home');
     return roo.isDisplayed();
   }
-    unblockSettings() {
-        expect(this.lock.isDisplayed()).to.be.false;
-        this.unlock.click();
-        this.unlock.click();
-        this.unlock.click();
-        this.unlock.click();
-        expect(this.lock.isDisplayed()).to.be.true;
-    }
+  unblockSettings() {
+    expect(this.lock.isDisplayed()).to.be.false;
+    this.unlock.click();
+    browser.pause(600);
+    this.unlock.click();
+    browser.pause(600);
+    this.unlock.click();
+    browser.pause(600);
+    this.unlock.click();
+    browser.pause(600);
+    expect(this.lock.isDisplayed()).to.be.true;
+  }
 }
 
 export default new RootAppPage();
