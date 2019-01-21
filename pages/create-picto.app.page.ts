@@ -28,7 +28,9 @@ class CreatePictoAppPage extends Page {
   get vocalizationInput() {
     return $('#vocalization');
   }
-
+  get saveButton() {
+    return $('span=Save');
+  }
   /**
    * define or overwrite page methods
    */
@@ -46,6 +48,7 @@ class CreatePictoAppPage extends Page {
   createPicto(label, vocalization, type = 'button') {
     this.labelInput.setValue(label);
     this.vocalizationInput.setValue(vocalization);
+    this.saveButton.click();
   }
 }
 

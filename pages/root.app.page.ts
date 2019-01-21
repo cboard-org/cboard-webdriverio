@@ -18,6 +18,9 @@ class RootAppPage extends Page {
   get createTiles() {
     return $('//button[@aria-label="Create tiles"]');
   }
+  get tile() {
+    return $('button.Tile');
+  }
   /**
    * define or overwrite page methods
    */
@@ -46,6 +49,9 @@ class RootAppPage extends Page {
   }
   clickOnCreateTiles() {
     this.createTiles.click();
+  }
+  isTileDisplayed(label) {
+    return $('div=' + label).isDisplayed();
   }
 }
 
