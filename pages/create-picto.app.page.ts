@@ -7,6 +7,9 @@ class CreatePictoAppPage extends Page {
   /**
    * define elements
    */
+  get pageH6() {
+    return $('h6=Create tile');
+  }
   get folder() {
     return $('=Folder');
   }
@@ -33,10 +36,16 @@ class CreatePictoAppPage extends Page {
     super.open('https://app.cboard.io/');
     WelcomeAppPage.loginUser('anything@cboard.io', '1122');
     RootAppPage.unblockSettings();
+    RootAppPage.clickOnCreateTiles();
+    expect(this.pageH6.isDisplayed()).to.be.true;
   }
 
   reload() {
     super.reload();
+  }
+  createPicto(label, vocalization, type = 'button') {
+    this.labelInput.setValue(label);
+    this.vocalizationInput.setValue(vocalization);
   }
 }
 

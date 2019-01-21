@@ -15,6 +15,9 @@ class RootAppPage extends Page {
   get lock() {
     return $('//button[@aria-label="Lock"]');
   }
+  get createTiles() {
+    return $('//button[@aria-label="Create tiles"]');
+  }
   /**
    * define or overwrite page methods
    */
@@ -40,6 +43,9 @@ class RootAppPage extends Page {
     this.unlock.click();
     browser.pause(600);
     expect(this.lock.isDisplayed()).to.be.true;
+  }
+  clickOnCreateTiles() {
+    this.createTiles.click();
   }
 }
 
