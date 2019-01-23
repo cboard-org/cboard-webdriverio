@@ -1,4 +1,3 @@
-var assert = require('chai').assert;
 import { expect } from 'chai';
 import Page from 'pages/Page';
 import RootAppPage from 'pages/root.app.page';
