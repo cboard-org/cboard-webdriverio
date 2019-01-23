@@ -11,10 +11,10 @@ class CreatePictoAppPage extends Page {
     return $('h6=Create tile');
   }
   get folder() {
-    return $('=Folder');
+    return $('//input[@value="folder"]');
   }
   get button() {
-    return $('=Button');
+    return $('//input[@value="button"]');
   }
 
   get nameInput() {
@@ -48,6 +48,10 @@ class CreatePictoAppPage extends Page {
   createPicto(label, vocalization, type = 'button') {
     this.labelInput.setValue(label);
     this.vocalizationInput.setValue(vocalization);
+
+    if (type === 'folder') {
+      this.folder.click();
+    }
     this.saveButton.click();
   }
 }

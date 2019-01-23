@@ -19,7 +19,7 @@ class RootAppPage extends Page {
     return $('//button[@aria-label="Create tiles"]');
   }
   get tile() {
-    return $('button.Tile');
+    return $('//div[@class="Symbol"]');
   }
   /**
    * define or overwrite page methods
@@ -51,7 +51,9 @@ class RootAppPage extends Page {
     this.createTiles.click();
   }
   isTileDisplayed(label) {
-    return $('div=' + label).isDisplayed();
+    return $(
+      '//div[@class="Symbol"]//div[text()="' + label + '"]'
+    ).isDisplayed();
   }
 }
 
