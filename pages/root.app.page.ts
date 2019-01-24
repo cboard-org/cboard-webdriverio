@@ -1,6 +1,7 @@
 import { assert } from 'chai';
 import { expect } from 'chai';
 import Page from 'pages/Page';
+import WelcomeAppPage from 'pages/welcome.app.page';
 
 class RootAppPage extends Page {
   /**
@@ -21,11 +22,28 @@ class RootAppPage extends Page {
   get tile() {
     return $('//div[@class="Symbol"]');
   }
+
+  get settings() {
+    return $('//*[@aria-label="Settings"]');
+  }
+  get fullScreen() {
+    return $('//*[@aria-label="Full screen"]');
+  }
+  get printBoard() {
+    return $('//*[@aria-label="Print Board"]');
+  }
+  get communicatorBar() {
+    return $('.CommunicatorToolbar.Board__communicator-toolbar');
+  }
+  get boardEditBar() {
+    return $('.EditToolbar.Board__edit-toolbar');
+  }
   /**
    * define or overwrite page methods
    */
   public open() {
     super.open('https://app.cboard.io/');
+    WelcomeAppPage.loginUser('anything@cboard.io', '1122');
   }
   checkTitle() {
     var title = browser.getTitle();
@@ -54,6 +72,21 @@ class RootAppPage extends Page {
     return $(
       '//div[@class="Symbol"]//div[text()="' + label + '"]'
     ).isDisplayed();
+  }
+  isSettingsDisplayed() {
+    return this.settings.isDisplayed();
+  }
+  isFullScreenDisplayed() {
+    return this.fullScreen.isDisplayed();
+  }
+  isPrintBoardisplayed() {
+    return this.printBoard.isDisplayed();
+  }
+  isCommunicatorBarDisplayed() {
+    return this.communicatorBar.isDisplayed();
+  }
+  isBoardEditBarDisplayed() {
+    return this.boardEditBar.isDisplayed();
   }
 }
 

@@ -133,7 +133,7 @@ exports.config = {
         timeout: 60000
     },    
     
-    reporters: ['dot', 'concise', 'spec'],
+    reporters: ['dot', 'spec'],
     services: ['selenium-standalone'],
     //
     // =====
