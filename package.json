@@ -17,6 +17,7 @@
     "mocha": "5.2.0",
     "wdio-chromedriver-service": "0.1.5",
     "randomstring": "1.1.5",
+    "random-number": "0.0.9",
     "ts-node": "^7.0.1",
     "tsconfig-paths": "^3.7.0",
     "tslint": "^5.12.1",
