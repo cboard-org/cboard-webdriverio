@@ -126,7 +126,7 @@ exports.config = {
   // See the full list at http://mochajs.org/
   mochaOpts: {
     //require: ['tsconfig-paths/register'],
-    compilers: ['ts-node/register', 'tsconfig-paths/register'],
+      compilers: ['tsconfig-paths/register', 'ts-node/register'],
     ui: 'bdd',
     timeout: 60000
   },
