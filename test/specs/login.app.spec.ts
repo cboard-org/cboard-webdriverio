@@ -1,6 +1,6 @@
-import WelcomeAppPage from 'pages/welcome.app.page';
-import { assert } from 'chai';
 import randomstring from 'randomstring';
+
+import WelcomeAppPage from 'pages/welcome.app.page';
 
 describe('Welcome page', function() {
   beforeEach(function() {

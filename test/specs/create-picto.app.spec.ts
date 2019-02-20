@@ -1,7 +1,8 @@
-import CreatePictoAppPage from 'pages/create-picto.app.page';
-import RootAppPage from 'pages/root.app.page';
 import { expect } from 'chai';
 import randomstring from 'randomstring';
+
+import CreatePictoAppPage from 'pages/create-picto.app.page';
+import RootAppPage from 'pages/root.app.page';
 
 describe('Create pictograms page', function() {
   beforeEach(function() {
@@ -20,6 +21,7 @@ describe('Create pictograms page', function() {
     CreatePictoAppPage.createPicto(newLabel, newLabel, 'button');
     expect(RootAppPage.isTileDisplayed(newLabel)).to.be.true;
   });
+
   it('should create a new folder and display it in the current board', function() {
     var newLabel = randomstring.generate({
       length: 8,

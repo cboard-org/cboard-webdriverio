@@ -1,24 +1,13 @@
 {
   "defaultSeverity": "error",
   "no-default-export": false,
-  "extends": [
-    "tslint:recommended"
-  ],
+  "extends": ["tslint:recommended"],
   "jsRules": {},
   "rules": {
-    "quotemark": [
-      true,
-      "single",
-      "avoid-escape",
-      "jsx-double"
-    ],
+    "quotemark": [true, "single", "avoid-escape", "jsx-double"],
     "trailing-comma": false,
     "no-var-keyword": true,
-    "indent": [
-      true,
-      "spaces",
-      2
-    ],
+    "indent": [true, "spaces", 2],
     "eofline": false,
     "whitespace": false,
     "import-spacing": false,
