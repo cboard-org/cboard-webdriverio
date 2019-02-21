@@ -13,7 +13,7 @@
       "pages/*": [ "test/pages/*" ],
       "specs/*": [ "test/specs/*" ]
     },
-    "strict": true , /* Enable all strict type-checking options. */
+    "strict": false  , /* Enable all strict type-checking options. */
     "target": "es2017", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */
     "types": [ "webdriver", "webdriverio", "mocha", "chai", "node" ]
   },
