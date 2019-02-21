@@ -126,7 +126,7 @@ exports.config = {
   // See the full list at http://mochajs.org/
   mochaOpts: {
     //require: ['tsconfig-paths/register'],
-      compilers: ['tsconfig-paths/register', 'ts-node/register'],
+    compilers: ['tsconfig-paths/register'],
     ui: 'bdd',
     timeout: 60000
   },
@@ -166,7 +166,7 @@ exports.config = {
   before: function(capabilities, specs) {
     var chai = require('chai');
     global.expect = chai.expect;
-    //require('ts-node').register({ files: true });
+    require('ts-node').register({ files: true });
   }
   /**
    * Runs before a WebdriverIO command gets executed.
