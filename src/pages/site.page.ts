@@ -1,4 +1,4 @@
-import Page from 'pages/Page';
+import Page from 'src/pages/Page';
 
 class SitePage extends Page {}
 

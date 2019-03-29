@@ -1,6 +1,6 @@
 import randomstring from 'randomstring';
 
-import WelcomeAppPage from 'pages/welcome.app.page';
+import WelcomeAppPage from 'src/pages/welcome.app.page';
 
 describe('Welcome page', function() {
   beforeEach(function() {
