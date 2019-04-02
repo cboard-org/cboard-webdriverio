@@ -26,8 +26,8 @@ class HomePage extends BasePage {
   /**
    * define or overwrite page methods
    */
-  open() {
-    super.open('https://www.cboard.io/');
+    open() {
+        browser.url('https://www.cboard.io/');
   }
 
   clickOnStartCboard() {
