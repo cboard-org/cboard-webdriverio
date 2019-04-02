@@ -26,6 +26,7 @@
     "tslint": "^5.14.0",
     "typescript": "^3.3.3333",
     "webdriverio": "^5.7.2",
-    "randomstring": "^1.1.5"
+    "randomstring": "^1.1.5",
+    "random-number": "^0.0.9"
   }
 }
