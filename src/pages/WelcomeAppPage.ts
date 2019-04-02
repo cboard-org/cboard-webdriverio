@@ -8,7 +8,7 @@ class WelcomeAppPage extends BasePage {
    * define elements
    */
   get login() {
-    return $('button=Login');
+      return $('button.WelcomeScreen__button--login');
   }
   get signup() {
     return $('button=Sign Up');
