@@ -9,10 +9,6 @@ export default class BasePage {
     /**
      * define or overwrite page methods
      */
-    open(path) {
-        browser.url(path);
-    }
-
     reload() {
         browser.reloadSession();
     }
