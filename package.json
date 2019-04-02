@@ -1,14 +1,14 @@
 {
-  "name": "webdriverio_v5_typescript",
+  "name": "cboard-webdriverio",
   "version": "1.0.0",
-  "description": "Boilerplate project using version 5 WebdriverIO & TypeScript.",
-  "repository": "https://github.com/jpolley/WebdriverIO_v5_TypeScript",
+  "description": "UI testing for the Cboard project using version 5 WebdriverIO & TypeScript.",
+  "repository": "https://github.com/cboard-org/cboard-webdriverio",
   "scripts": {
     "test": "wdio",
     "lint": "tslint --fix 'test/**/*.ts' && tslint --fix 'src/**/*.ts'"
   },
-  "author": "Jeremy Polley",
-  "license": "ISC",
+  "author": "Martin Bedouret",
+  "license": "GPL",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
