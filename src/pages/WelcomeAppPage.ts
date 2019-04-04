@@ -54,7 +54,7 @@ class WelcomeAppPage extends BasePage {
    * define or overwrite page methods
    */
   open() {
-    browser.url('https://app.cboard.io/');
+    browser.url('/');
   }
 
   reload() {
