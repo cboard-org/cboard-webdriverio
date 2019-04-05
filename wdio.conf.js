@@ -109,7 +109,10 @@ exports.config = {
         'dot',
         'concise',
         ['junit', {
-            outputDir: 'test-results'
+            outputDir: 'test-results',
+            outputFileFormat: function (opts) { // optional
+                return `results-${opts.cid}.${opts.capabilities}.xml`
+            }
         }]
     ],
 

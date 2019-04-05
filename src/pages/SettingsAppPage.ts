@@ -21,7 +21,7 @@ class SettingsAppPage extends BasePage {
     return $('#export-button');
   }
   get exportFormatMenu() {
-    return $('//ul{@role="menu"');
+    return $('//ul[@role="menu"]');
   }
 
   /**
