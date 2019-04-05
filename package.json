@@ -21,6 +21,7 @@
     "@wdio/spec-reporter": "5.7.9",
     "@wdio/dot-reporter": "5.7.8",
     "@wdio/concise-reporter": "5.7.8",
+    "@wdio/junit-reporter": "5.7.8",
     "@wdio/sync": "5.7.9",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",

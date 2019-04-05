@@ -105,7 +105,14 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec','dot','concise'],
+    reporters: [
+        'dot',
+        'concise',
+        ['junit', {
+            outputDir: './test-results/junit/'
+        }]
+    ],
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -114,6 +121,7 @@ exports.config = {
         'tsconfig-paths/register'
       ],
         ui: 'bdd',
+        slow: 2000,
         timeout: timeout
     },
     //
