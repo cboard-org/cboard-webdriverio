@@ -16,7 +16,7 @@ describe('Create pictograms page', function() {
   it('should create a new pictogram and display it in the current board', function() {
     var newLabel = randomstring.generate({
       length: 8,
-      charset: 'alphabetic'
+      charset: 'alphabetic',
     });
     CreatePictoAppPage.createPicto(newLabel, newLabel, 'button');
     expect(RootAppPage.isTileDisplayed(newLabel)).to.be.true;
@@ -25,7 +25,7 @@ describe('Create pictograms page', function() {
   it('should create a new folder and display it in the current board', function() {
     var newLabel = randomstring.generate({
       length: 8,
-      charset: 'alphabetic'
+      charset: 'alphabetic',
     });
     CreatePictoAppPage.createPicto(newLabel, newLabel, 'folder');
     expect(RootAppPage.isTileDisplayed(newLabel)).to.be.true;

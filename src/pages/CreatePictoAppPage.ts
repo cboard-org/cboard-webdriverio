@@ -32,8 +32,8 @@ class CreatePictoAppPage extends BasePage {
   /**
    * define or overwrite page methods
    */
-    open() {
-        browser.url('/');
+  open() {
+    browser.url('/');
     WelcomeAppPage.loginUser('anything@cboard.io', '1122');
     RootAppPage.unblockSettings();
     RootAppPage.clickOnCreateTiles();

@@ -51,8 +51,8 @@ class RootAppPage extends BasePage {
   /**
    * define or overwrite page methods
    */
-    open() {
-        browser.url('/');
+  open() {
+    browser.url('/');
     WelcomeAppPage.loginUser('anything@cboard.io', '1122');
   }
 

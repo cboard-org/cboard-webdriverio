@@ -27,7 +27,7 @@ describe('Welcome page', function() {
     var newUser =
       randomstring.generate({
         length: 16,
-        charset: 'alphabetic'
+        charset: 'alphabetic',
       }) + '@cboard.io';
     WelcomeAppPage.signupUser(newUser, newUser, '1122');
   });
