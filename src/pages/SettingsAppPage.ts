@@ -15,7 +15,7 @@ class SettingsAppPage extends BasePage {
     return $('//a[@href="/settings/export"]');
   }
   get import() {
-      return $('//a[@href="/settings/import"]';
+      return $('//a[@href="/settings/import"]');
   }
   get exportButton() {
     return $('#export-button');
