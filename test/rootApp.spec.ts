@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import RootAppPage from 'pages/root.app.page';
+import RootAppPage from 'src/pages/RootAppPage';
 
 describe('Root board page', function() {
   beforeEach(function() {

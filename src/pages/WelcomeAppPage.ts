@@ -1,14 +1,14 @@
 import { expect } from 'chai';
 
-import Page from 'pages/Page';
-import RootAppPage from 'pages/root.app.page';
+import BasePage from 'src/pages/BasePage';
+import RootAppPage from 'src/pages/RootAppPage';
 
-class WelcomeAppPage extends Page {
+class WelcomeAppPage extends BasePage {
   /**
    * define elements
    */
   get login() {
-    return $('button=Login');
+      return $('button.WelcomeScreen__button--login');
   }
   get signup() {
     return $('button=Sign Up');
@@ -54,7 +54,7 @@ class WelcomeAppPage extends Page {
    * define or overwrite page methods
    */
   open() {
-    super.open('https://app.cboard.io/');
+    browser.url('/');
   }
 
   reload() {

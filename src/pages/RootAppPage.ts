@@ -2,10 +2,10 @@ import { assert } from 'chai';
 import { expect } from 'chai';
 var rn = require('random-number');
 
-import Page from 'pages/Page';
-import WelcomeAppPage from 'pages/welcome.app.page';
+import BasePage from 'src/pages/BasePage';
+import WelcomeAppPage from 'src/pages/WelcomeAppPage';
 
-class RootAppPage extends Page {
+class RootAppPage extends BasePage {
   /**
    * define elements
    */
@@ -51,8 +51,8 @@ class RootAppPage extends Page {
   /**
    * define or overwrite page methods
    */
-  open() {
-    super.open('https://app.cboard.io/');
+    open() {
+        browser.url('/');
     WelcomeAppPage.loginUser('anything@cboard.io', '1122');
   }
 

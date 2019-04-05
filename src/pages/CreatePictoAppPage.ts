@@ -1,10 +1,10 @@
 import { expect } from 'chai';
 
-import Page from 'pages/Page';
-import RootAppPage from 'pages/root.app.page';
-import WelcomeAppPage from 'pages/welcome.app.page';
+import BasePage from 'src/pages/BasePage';
+import RootAppPage from 'src/pages/RootAppPage';
+import WelcomeAppPage from 'src/pages/WelcomeAppPage';
 
-class CreatePictoAppPage extends Page {
+class CreatePictoAppPage extends BasePage {
   /**
    * define elements
    */
@@ -32,8 +32,8 @@ class CreatePictoAppPage extends Page {
   /**
    * define or overwrite page methods
    */
-  open() {
-    super.open('https://app.cboard.io/');
+    open() {
+        browser.url('/');
     WelcomeAppPage.loginUser('anything@cboard.io', '1122');
     RootAppPage.unblockSettings();
     RootAppPage.clickOnCreateTiles();

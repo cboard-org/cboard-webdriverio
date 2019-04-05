@@ -1,6 +1,6 @@
-import Page from 'pages/Page';
+import BasePage from 'src/pages/BasePage';
 
-class HomePage extends Page {
+class HomePage extends BasePage {
   /**
    * define elements
    **/
@@ -26,8 +26,8 @@ class HomePage extends Page {
   /**
    * define or overwrite page methods
    */
-  open() {
-    super.open('https://www.cboard.io/');
+    open() {
+        browser.url('https://www.cboard.io/');
   }
 
   clickOnStartCboard() {

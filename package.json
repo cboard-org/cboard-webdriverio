@@ -1,43 +1,37 @@
 {
   "name": "cboard-webdriverio",
-  "version": "0.0.1",
-  "description": "UI tests for Cboard project",
-  "main": "",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:cboard-org/cboard-webdriverio.git"
-  },
+  "version": "1.0.0",
+  "description": "UI testing for the Cboard project using version 5 WebdriverIO & TypeScript.",
+  "repository": "https://github.com/cboard-org/cboard-webdriverio",
   "scripts": {
-    "test-wdio": "./node_modules/.bin/wdio wdio.conf.js",
-    "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}"
+    "test": "wdio",
+    "lint": "tslint --fix 'test/**/*.ts' && tslint --fix 'src/**/*.ts'"
   },
-  "dependencies": {
-    "chai": "4.2.0",
-    "dotenv": "6.2.0",
-    "mocha": "5.2.0",
-    "wdio-chromedriver-service": "0.1.5",
-    "randomstring": "1.1.5",
-    "random-number": "0.0.9",
-    "ts-node": "^7.0.1",
-    "tsconfig-paths": "^3.7.0",
-    "tslint": "^5.12.1",
-    "typescript": "^3.2.2",
-    "webdriverio": "^5.3.0"
-  },
+  "author": "Martin Bedouret",
+  "license": "GPL",
   "devDependencies": {
     "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.5",
-    "@types/node": "^10.12.18",
-    "@wdio/dot-reporter": "^5.0.0",
-    "@wdio/concise-reporter": "^5.0.0",
-    "@wdio/allure-reporter": "^5.0.0",
-    "@wdio/local-runner": "^5.3.0",
-    "@wdio/mocha-framework": "^5.2.8",
-    "@wdio/selenium-standalone-service": "^5.2.2",
-    "@wdio/spec-reporter": "^5.2.3",
-    "@wdio/sync": "^5.2.8",
-    "@wdio/cli": "^5.3.0",
-    "chromedriver": "^2.45.0",
-    "prettier": "1.15.3"
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^10.14.1",
+    "@wdio/cli": "5.7.10",
+    "@wdio/local-runner": "5.7.9",
+    "@wdio/mocha-framework": "5.7.8",
+    "@wdio/selenium-standalone-service": "5.7.8",
+    "@wdio/browserstack-service": "5.7.8",
+    "@wdio/spec-reporter": "5.7.9",
+    "@wdio/dot-reporter": "5.7.8",
+    "@wdio/concise-reporter": "5.7.8",
+    "@wdio/junit-reporter": "5.7.8",
+    "@wdio/sync": "5.7.9",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.8.0",
+    "tslint": "^5.14.0",
+    "typescript": "^3.3.3333",
+    "webdriverio": "^5.7.2",
+    "randomstring": "^1.1.5",
+    "random-number": "^0.0.9",
+    "dotenv": "7.0.0"
   }
 }

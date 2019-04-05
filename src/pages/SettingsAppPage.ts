@@ -1,10 +1,10 @@
 import { expect } from 'chai';
 
-import Page from 'pages/Page';
-import RootAppPage from 'pages/root.app.page';
-import WelcomeAppPage from 'pages/welcome.app.page';
+import BasePage from 'src/pages/BasePage';
+import RootAppPage from 'src/pages/RootAppPage';
+import WelcomeAppPage from 'src/pages/WelcomeAppPage';
 
-class SettingsAppPage extends Page {
+class SettingsAppPage extends BasePage {
   /**
    * define elements
    */
@@ -12,26 +12,23 @@ class SettingsAppPage extends Page {
     return $('h6=Settings');
   }
   get export() {
-    return $('span=Export');
+    return $('//a[@href="/settings/export"]');
   }
   get import() {
-    return $('span=Import');
-  }
-  get saveButton() {
-    return $('span=Save');
+      return $('//a[@href="/settings/import"]');
   }
   get exportButton() {
     return $('#export-button');
   }
   get exportFormatMenu() {
-    return $('//ul{@role="menu"');
+    return $('//ul[@role="menu"]');
   }
 
   /**
    * define or overwrite page methods
    */
-  open() {
-    super.open('https://app.cboard.io/');
+    open() {
+        browser.url('/');
     WelcomeAppPage.loginUser('anything@cboard.io', '1122');
     RootAppPage.unblockSettings();
     RootAppPage.clickOnSetttings();
