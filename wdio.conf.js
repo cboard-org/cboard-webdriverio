@@ -109,7 +109,7 @@ exports.config = {
         'dot',
         'concise',
         ['junit', {
-            outputDir: './test-results/junit/'
+            outputDir: 'test-results'
         }]
     ],
 
