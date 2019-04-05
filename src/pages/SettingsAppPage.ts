@@ -12,13 +12,10 @@ class SettingsAppPage extends BasePage {
     return $('h6=Settings');
   }
   get export() {
-    return $('span=Export');
+    return $('//a[@href="/settings/export"]');
   }
   get import() {
-    return $('span=Import');
-  }
-  get saveButton() {
-    return $('span=Save');
+      return $('//a[@href="/settings/import"]';
   }
   get exportButton() {
     return $('#export-button');
