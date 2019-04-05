@@ -26,9 +26,6 @@ describe('Export board option', function() {
 
   it('should download the root board as a cboard json file', function() {
     SettingsPage.clickOnExport();
-    SettingsPage.exportBoard();
+    //SettingsPage.exportBoard();
   });
-
-  it('should download the root board as OBZ file', function() {});
-  it('should download the root board as OBF file', function() {});
 });

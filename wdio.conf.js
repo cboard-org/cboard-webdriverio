@@ -79,7 +79,7 @@ exports.config = {
     baseUrl: 'https://' + process.env.QA_SERVER_AUTH + '@app.qa.cboard.io',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 90000,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
@@ -120,12 +120,11 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
+      timeout: 90000,
       compilers: [
         'tsconfig-paths/register'
       ],
-        ui: 'bdd',
-        slow: 2000,
-        timeout: timeout
+      ui: 'bdd'
     },
     //
     // =====
