@@ -1,3 +1,3 @@
 export function imagePath(imageName = 'webdriverIO.png') {
-    return __dirname + '/' + imageName;
+  return __dirname + '/' + imageName;
 }
