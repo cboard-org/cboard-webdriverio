@@ -15,6 +15,12 @@ describe('Welcome page', function() {
     WelcomeAppPage.loginUser('anything@cboard.io', '1122');
   });
 
+  it('should open and close and successfully login a valid user', function() {
+    WelcomeAppPage.loginButton.click();
+    WelcomeAppPage.cancelButton.click();
+    WelcomeAppPage.loginUser('anything@cboard.io', '1122');
+  });
+
   it('should reject a login with an invalid user', function() {
     WelcomeAppPage.loginUser('nothing@cboard.io', '1122', true);
   });

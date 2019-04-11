@@ -7,29 +7,17 @@ class WelcomeAppPage extends BasePage {
   /**
    * define elements
    */
-  get login() {
+  get loginButton() {
     return $('button.WelcomeScreen__button--login');
   }
-  get signup() {
+  get signupButton() {
     return $('button=Sign Up');
   }
-  get signmeup() {
+  get signmeupButton() {
     return $('button=Sign me up');
   }
-  get skip() {
+  get skipButton() {
     return $('button=Skip for now');
-  }
-  get about() {
-    return $('=ABOUT');
-  }
-  get contact() {
-    return $('=CONTACT');
-  }
-  get help() {
-    return $('=HELP');
-  }
-  get github() {
-    return $('=GITHUB');
   }
   get nameInput() {
     return $('//*[@name="name"]');
@@ -43,8 +31,11 @@ class WelcomeAppPage extends BasePage {
   get passwordConfirmInput() {
     return $('//*[@name="passwordConfirm"]');
   }
-  get loginButton() {
+  get submitButton() {
     return $('//button[@type="submit"]');
+  }
+  get cancelButton() {
+    return $('button=Cancel');
   }
   get signupConfirmMessage() {
     return $('div.SignUp__status.SignUp__status--success');
@@ -65,10 +56,10 @@ class WelcomeAppPage extends BasePage {
   }
 
   loginUser(username, password, loginError = false) {
-    this.login.click();
+    this.loginButton.click();
     this.usernameInput.setValue(username);
     this.passwordInput.setValue(password);
-    this.loginButton.click();
+    this.submitButton.click();
     if (loginError) {
       this.loginErrorMessage.waitForDisplayed(
         9000,
@@ -81,37 +72,21 @@ class WelcomeAppPage extends BasePage {
   }
 
   loginSkip() {
-    this.skip.click();
+    this.skipButton.click();
     RootAppPage.checkTitle();
   }
 
   signupUser(name, username, password) {
-    this.signup.click();
+    this.signupButton.click();
     this.nameInput.setValue(name);
     this.usernameInput.setValue(username);
     this.passwordInput.setValue(password);
     this.passwordConfirmInput.setValue(password);
-    this.signmeup.click();
+    this.signmeupButton.click();
     var msg = browser.$('div.SignUp__status.SignUp__status--success').getText();
     expect(msg).to.contain(
       'An email has been sent to you. Please check it to verify your account.'
     );
-  }
-
-  clickOnAboutMenuItem() {
-    this.about.click();
-  }
-
-  clickOnContactMenuItem() {
-    this.contact.click();
-  }
-
-  clickOnHelpMenuItem() {
-    this.help.click();
-  }
-
-  clickOnGithubMenuItem() {
-    this.github.click();
   }
 }
 
