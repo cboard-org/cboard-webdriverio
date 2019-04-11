@@ -49,6 +49,9 @@ class WelcomeAppPage extends BasePage {
   get signupConfirmMessage() {
     return $('div.SignUp__status.SignUp__status--success');
   }
+  get loginErrorMessage() {
+    return $('div.Login__status.Login__status--error');
+  }
 
   /**
    * define or overwrite page methods
@@ -67,6 +70,11 @@ class WelcomeAppPage extends BasePage {
     this.passwordInput.setValue(password);
     this.loginButton.click();
     if (loginError) {
+      this.loginErrorMessage.waitForDisplayed(
+        9000,
+        false,
+        'Login Error message not displayed'
+      );
     } else {
       RootAppPage.checkTitle();
     }
