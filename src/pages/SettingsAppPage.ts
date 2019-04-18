@@ -55,11 +55,11 @@ class SettingsAppPage extends BasePage {
   }
 
   clickOnLanguage() {
-    return this.export.click();
+    return this.language.click();
   }
 
   clickOnSpeech() {
-    return this.export.click();
+    return this.speech.click();
   }
   clickOnExport() {
     return this.export.click();
@@ -69,13 +69,13 @@ class SettingsAppPage extends BasePage {
     return this.import.click();
   }
   clickOnDisplay() {
-    return this.export.click();
+    return this.display.click();
   }
   clickOnNavigation() {
-    return this.export.click();
+    return this.navigation.click();
   }
   clickOnScanning() {
-    return this.export.click();
+    return this.scanning.click();
   }
 
   exportBoard(format = 'Cboard') {

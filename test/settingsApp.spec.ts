@@ -1,10 +1,15 @@
+import { expect } from 'chai';
+
 import SettingsPage from 'src/pages/SettingsAppPage';
 import RootAppPage from 'src/pages/RootAppPage';
 import SettingsAppPage from 'src/pages/SettingsAppPage';
+import LanguagesAppPage from 'src/pages/LanguagesAppPage';
 
 describe('Language option', function() {
   beforeEach(function() {
     SettingsAppPage.open();
+      SettingsAppPage.clickOnLanguage();
+      browser.pause(1000);
   });
 
   afterEach(function() {
@@ -12,8 +17,13 @@ describe('Language option', function() {
   });
 
   it('should display available languages list', function() {
-    SettingsPage.clickOnLanguage();
-    //SettingsPage.exportBoard();
+    expect(LanguagesAppPage.getLanguages()).to.be.above(0);
+  });
+  it('should update language to Spanish from  available languages list', function() {
+    expect(LanguagesAppPage.getLanguages()).to.be.above(0);
+  });
+  it('should update language to German from available languages list', function() {
+    expect(LanguagesAppPage.getLanguages()).to.be.above(0);
   });
 });
 

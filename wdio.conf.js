@@ -54,7 +54,8 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 1,
         //
-        browser: 'chrome'
+        browser: 'chrome',
+        'browserstack.debug': 'true'
     }],
     //
     // ===================
