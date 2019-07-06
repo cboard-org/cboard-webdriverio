@@ -69,3 +69,4 @@ obj/
 errorShots/
 *.sln
 *.njsproj
+*.njsproj.user
