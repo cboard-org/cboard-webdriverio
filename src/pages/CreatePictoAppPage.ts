@@ -35,6 +35,9 @@ class CreatePictoAppPage extends BasePage {
     get searchInput() {
         return $('//input[@label="Search symbol library"]');
     }
+    get firstSymbol() {
+        return $('//ul[@role="listbox"]//li[@role="option"]');
+    }
 
     
   /**
@@ -53,13 +56,19 @@ class CreatePictoAppPage extends BasePage {
   }
 
   createPicto(label, vocalization, type = 'button', search = '') {
-    this.labelInput.setValue(label);
-    this.vocalizationInput.setValue(vocalization);
 
-    if (search !== '') {
-        this.searchImages.click();
-        this.searchInput.setValue(search);
-    }
+      if (search !== '') {
+          this.searchImages.click();
+          for (var i = 0; i < search.length; i++) {
+
+              this.searchInput.setValue(search.charAt(i));
+              browser.pause(200);
+          }
+          this.firstSymbol.click();
+      }
+
+      this.labelInput.setValue(label);
+      this.vocalizationInput.setValue(vocalization);
 
     if (type === 'folder') {
       this.folder.click();

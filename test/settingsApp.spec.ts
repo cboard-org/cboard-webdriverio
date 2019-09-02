@@ -3,12 +3,12 @@ import RootAppPage from 'src/pages/RootAppPage';
 import SettingsAppPage from 'src/pages/SettingsAppPage';
 
 describe('Language option', function() {
-  beforeEach(function() {
+    beforeEach(function () {
+        browser.reloadSession();
     SettingsAppPage.open();
   });
 
   afterEach(function() {
-    browser.reloadSession();
   });
 
   it('should display available languages list', function() {

@@ -83,9 +83,18 @@ class RootAppPage extends BasePage {
   }
 
   isTileDisplayed(label, image = '') {
-    return $(
+    const tileDisplayed  = $(
       '//div[@class="Symbol"]//div[text()="' + label + '"]'
     ).isDisplayed();
+
+      if (image !== '') {
+          const imageDisplayed = $(
+              '//div[@class="Symbol"]//img[contains(@src,"' + image + '")]'
+          ).isDisplayed();
+          return tileDisplayed && imageDisplayed;
+      } else {
+          return tileDisplayed;
+      }
   }
 
   isSettingsDisplayed() {

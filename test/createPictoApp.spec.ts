@@ -5,12 +5,12 @@ import CreatePictoAppPage from 'src/pages/CreatePictoAppPage';
 import RootAppPage from 'src/pages/RootAppPage';
 
 describe('Create pictograms page', function() {
-  beforeEach(function() {
+    beforeEach(function () {
+        browser.reloadSession();
     CreatePictoAppPage.open();
   });
 
   afterEach(function() {
-    browser.reloadSession();
   });
 
   it('should create a new pictogram and display it in the current board', function() {
@@ -37,6 +37,6 @@ describe('Create pictograms page', function() {
         charset: 'alphabetic'
     });
     CreatePictoAppPage.createPicto(newLabel, newLabel, 'button', 'boy');
-      //expect(RootAppPage.isTileDisplayed(newLabel, 'boy')).to.be.true;
+    expect(RootAppPage.isTileDisplayed('boy' + newLabel, 'https://api.arasaac.org/api/pictograms/2485')).to.be.true;
   });
 });

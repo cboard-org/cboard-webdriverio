@@ -3,12 +3,12 @@ import { expect } from 'chai';
 import RootAppPage from 'src/pages/RootAppPage';
 
 describe('Root board page', function() {
-  beforeEach(function() {
+    beforeEach(function () {
+        browser.reloadSession();
     RootAppPage.open();
   });
 
   afterEach(function() {
-    browser.reloadSession();
   });
 
   it('should display the valid page title', function() {
