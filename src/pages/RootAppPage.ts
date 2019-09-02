@@ -19,7 +19,7 @@ class RootAppPage extends BasePage {
     return $('//button[@aria-label="Lock"]');
   }
   get createTiles() {
-    return $('//button[@aria-label="Create tiles"]');
+      return $('//button[@aria-label="Add Tile"]');
   }
   get tile() {
     return $('//div[@class="Symbol"]');
@@ -82,7 +82,7 @@ class RootAppPage extends BasePage {
     this.createTiles.click();
   }
 
-  isTileDisplayed(label) {
+  isTileDisplayed(label, image = '') {
     return $(
       '//div[@class="Symbol"]//div[text()="' + label + '"]'
     ).isDisplayed();

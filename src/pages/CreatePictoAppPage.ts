@@ -28,7 +28,15 @@ class CreatePictoAppPage extends BasePage {
   }
   get saveButton() {
     return $('span=Save');
-  }
+    }
+    get searchImages() {
+        return $('//button[@aria-label="Symbol search"]');
+    }
+    get searchInput() {
+        return $('//input[@label="Search symbol library"]');
+    }
+
+    
   /**
    * define or overwrite page methods
    */
@@ -44,9 +52,14 @@ class CreatePictoAppPage extends BasePage {
     super.reload();
   }
 
-  createPicto(label, vocalization, type = 'button') {
+  createPicto(label, vocalization, type = 'button', search = '') {
     this.labelInput.setValue(label);
     this.vocalizationInput.setValue(vocalization);
+
+    if (search !== '') {
+        this.searchImages.click();
+        this.searchInput.setValue(search);
+    }
 
     if (type === 'folder') {
       this.folder.click();

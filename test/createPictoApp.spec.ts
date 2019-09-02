@@ -30,4 +30,13 @@ describe('Create pictograms page', function() {
     CreatePictoAppPage.createPicto(newLabel, newLabel, 'folder');
     expect(RootAppPage.isTileDisplayed(newLabel)).to.be.true;
   });
+
+  it('should create a new pictogram with arasaac image and display it in the current board', function () {
+    var newLabel = randomstring.generate({
+        length: 8,
+        charset: 'alphabetic'
+    });
+    CreatePictoAppPage.createPicto(newLabel, newLabel, 'button', 'boy');
+      //expect(RootAppPage.isTileDisplayed(newLabel, 'boy')).to.be.true;
+  });
 });
