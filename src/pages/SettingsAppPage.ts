@@ -54,12 +54,12 @@ class SettingsAppPage extends BasePage {
     super.reload();
   }
 
-  clickOnLanguage() {
-    return this.export.click();
+    clickOnLanguage() {
+        return this.language.click();
   }
 
   clickOnSpeech() {
-    return this.export.click();
+    return this.speech.click();
   }
   clickOnExport() {
     return this.export.click();
@@ -68,14 +68,14 @@ class SettingsAppPage extends BasePage {
   clickOnImport() {
     return this.import.click();
   }
-  clickOnDisplay() {
-    return this.export.click();
+    clickOnDisplay() {
+        return this.display.click();
   }
-  clickOnNavigation() {
-    return this.export.click();
+    clickOnNavigation() {
+        return this.navigation.click();
   }
-  clickOnScanning() {
-    return this.export.click();
+    clickOnScanning() {
+        return this.scanning.click();
   }
 
   exportBoard(format = 'Cboard') {

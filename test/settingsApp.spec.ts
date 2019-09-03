@@ -18,12 +18,12 @@ describe('Language option', function() {
 });
 
 describe('Speech option', function() {
-  beforeEach(function() {
+    beforeEach(function () {
+        browser.reloadSession();
     SettingsAppPage.open();
   });
 
   afterEach(function() {
-    browser.reloadSession();
   });
 
   it('should display available speech settings', function() {
@@ -33,12 +33,12 @@ describe('Speech option', function() {
 });
 
 describe('Import board option', function() {
-  beforeEach(function() {
+    beforeEach(function () {
+        browser.reloadSession();
     SettingsAppPage.open();
   });
 
   afterEach(function() {
-    browser.reloadSession();
   });
   it('should import and immediately display the board', function() {
     SettingsAppPage.clickOnImport();
@@ -46,12 +46,12 @@ describe('Import board option', function() {
 });
 
 describe('Export board option', function() {
-  beforeEach(function() {
+    beforeEach(function () {
+        browser.reloadSession();
     SettingsAppPage.open();
   });
 
   afterEach(function() {
-    browser.reloadSession();
   });
 
   it('should download the root board as a cboard json file', function() {
@@ -61,12 +61,12 @@ describe('Export board option', function() {
 });
 
 describe('Display option', function() {
-  beforeEach(function() {
+    beforeEach(function () {
+        browser.reloadSession();
     SettingsAppPage.open();
   });
 
   afterEach(function() {
-    browser.reloadSession();
   });
 
   it('should list the display options ', function() {
@@ -76,12 +76,12 @@ describe('Display option', function() {
 });
 
 describe('Scanning option', function() {
-  beforeEach(function() {
+    beforeEach(function () {
+        browser.reloadSession();
     SettingsAppPage.open();
   });
 
   afterEach(function() {
-    browser.reloadSession();
   });
 
   it('should display the scanning options', function() {
@@ -91,12 +91,12 @@ describe('Scanning option', function() {
 });
 
 describe('Navigation option', function() {
-  beforeEach(function() {
+    beforeEach(function () {
+        browser.reloadSession();
     SettingsAppPage.open();
   });
 
   afterEach(function() {
-    browser.reloadSession();
   });
 
   it('should display the Navigation options', function() {
