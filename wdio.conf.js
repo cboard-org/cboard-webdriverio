@@ -8,8 +8,8 @@ exports.config = {
     //
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
-    user: process.env.BROWSERSTACK_USERNAME || 'BROWSERSTACK_USERNAME',
-    key: process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACCESS_KEY',
+    user: process.env.BROWSERSTACK_USERNAME || 'martinbedouret2',
+    key: process.env.BROWSERSTACK_ACCESS_KEY || 'zLQMgddNphRvEJE7bUYC',
 
     //
     // ==================
@@ -55,6 +55,13 @@ exports.config = {
         maxInstances: 1,
         //
         browser: 'chrome'
+    }, {
+        // maxInstances can get overwritten per capability. So if you have an in house Selenium
+        // grid with only 5 firefox instance available you can make sure that not more than
+        // 5 instance gets started at a time.
+        maxInstances: 1,
+        browserName: 'firefox',
+        browser: 'firefox'
     }],
     //
     // ===================
