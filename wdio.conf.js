@@ -43,7 +43,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 2,
+    maxInstances: 4,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -53,15 +53,20 @@ exports.config = {
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
         maxInstances: 1,
-        //
+        browserName: 'chrome',
         browser: 'chrome'
     }, {
-        // maxInstances can get overwritten per capability. So if you have an in house Selenium
-        // grid with only 5 firefox instance available you can make sure that not more than
-        // 5 instance gets started at a time.
         maxInstances: 1,
         browserName: 'firefox',
         browser: 'firefox'
+    }, {
+        maxInstances: 1,
+        browserName: 'safari',
+        browser: 'safari'
+    }, {
+        maxInstances: 1,
+        browserName: 'edge',
+        browser: 'edge'
     }],
     //
     // ===================
@@ -127,11 +132,11 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-      timeout: 90000,
-      compilers: [
-        'tsconfig-paths/register'
-      ],
-      ui: 'bdd'
+        timeout: 90000,
+        compilers: [
+            'tsconfig-paths/register'
+        ],
+        ui: 'bdd'
     },
     //
     // =====
@@ -164,7 +169,7 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
     before: function (capabilities, specs) {
-      require('ts-node').register({ files: true });
+        require('ts-node').register({ files: true });
     },
     /**
      * Runs before a WebdriverIO command gets executed.
