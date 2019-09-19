@@ -64,11 +64,6 @@ exports.config = {
         browserName: 'safari',
         browser: 'safari',
         browserVersion: '12'
-    }, {
-        maxInstances: 2,
-        browserName: 'edge',
-        browser: 'edge',
-        browserVersion: '18'
     }],
     //
     // ===================
