@@ -72,7 +72,7 @@ class SettingsAppPage extends BasePage {
         return this.display.click();
     }
     clickOnNavigation() {
-        this.navigation.waitForDisplayed(6000);
+        this.navigation.waitForEnabled(6000);
         return this.navigation.click();
     }
     clickOnScanning() {
