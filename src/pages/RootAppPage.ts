@@ -6,149 +6,157 @@ import BasePage from 'src/pages/BasePage';
 import WelcomeAppPage from 'src/pages/WelcomeAppPage';
 
 class RootAppPage extends BasePage {
-  /**
-   * define elements
-   */
-  get rootboard() {
-    return $('h2=home');
-  }
-  get unlock() {
-    return $('//button[@aria-label="Unlock"]');
-  }
-  get lock() {
-    return $('//button[@aria-label="Lock"]');
-  }
-  get createTiles() {
-      return $('//button[@aria-label="Add Tile"]');
-  }
-  get tile() {
-    return $('//div[@class="Symbol"]');
-  }
-  get tileButton() {
-    return $$('//button[@class="Tile"]');
-  }
-  get settings() {
-    return $('//*[@aria-label="Settings"]');
-  }
-  get fullScreen() {
-    return $('//*[@aria-label="Full screen"]');
-  }
-  get communicatorBar() {
-    return $('.CommunicatorToolbar.Board__communicator-toolbar');
-  }
-  get boardEditBar() {
-    return $('.EditToolbar.Board__edit-toolbar');
-  }
-  get tilesInCommunicator() {
-    return $$('div.SymbolOutput__value');
-  }
-  get clear() {
-    return $('//*[@aria-label="Clear"]');
-  }
-  get printBoard() {
-    return $('//*[@aria-label="Print Board"]');
-  }
-  /**
-   * define or overwrite page methods
-   */
-  open() {
-    browser.url('/');
-    WelcomeAppPage.loginUser('anything@cboard.io', '1122');
-  }
+    /**
+     * define elements
+     */
+    get rootboard() {
+        return $('h2=home');
+    }
+    get unlock() {
+        return $('//button[@aria-label="Unlock"]');
+    }
+    get lock() {
+        return $('//button[@aria-label="Lock"]');
+    }
+    get createTiles() {
+        return $('//button[@aria-label="Add Tile"]');
+    }
+    get tile() {
+        return $('//div[@class="Symbol"]');
+    }
+    get tileButton() {
+        return $$('//button[@class="Tile"]');
+    }
+    get settings() {
+        return $('//*[@aria-label="Settings"]');
+    }
+    get fullScreen() {
+        return $('//*[@aria-label="Full screen"]');
+    }
+    get communicatorBar() {
+        return $('.CommunicatorToolbar.Board__communicator-toolbar');
+    }
+    get boardEditBar() {
+        return $('.EditToolbar.Board__edit-toolbar');
+    }
+    get tilesInCommunicator() {
+        return $$('div.SymbolOutput__value');
+    }
+    get clear() {
+        return $('//*[@aria-label="Clear"]');
+    }
+    get printBoard() {
+        return $('//*[@aria-label="Print Board"]');
+    }
 
-  checkTitle() {
-    var title = browser.getTitle();
-    assert.equal(title, 'Cboard - AAC Communication Board');
-  }
+    get contentCachedMessage() {
+        return $('//*[contains(.,"Content is cached for offline use")]');
+    }
 
-  isRootBoard() {
-    return this.rootboard.waitForDisplayed(5000);
-  }
+    /**
+     * define or overwrite page methods
+     */
+    open() {
+        browser.url('/');
+        WelcomeAppPage.loginUser('anything@cboard.io', '1122');
+    }
 
-  unblockSettings() {
-    expect(this.lock.isDisplayed()).to.be.false;
-    this.unlock.click();
-    browser.pause(600);
-    this.unlock.click();
-    browser.pause(600);
-    this.unlock.click();
-    browser.pause(600);
-    this.unlock.click();
-    browser.pause(600);
-    expect(this.lock.isDisplayed()).to.be.true;
-  }
+    checkTitle() {
+        var title = browser.getTitle();
+        assert.equal(title, 'Cboard - AAC Communication Board');
+    }
 
-  clickOnCreateTiles() {
-    this.createTiles.click();
-  }
+    isRootBoard() {
+        return this.rootboard.waitForDisplayed(5000);
+    }
 
-  isTileDisplayed(label, image = '') {
-    const tileDisplayed  = $(
-      '//div[@class="Symbol"]//div[text()="' + label + '"]'
-    ).isDisplayed();
+    unblockSettings() {
+        expect(this.lock.isDisplayed()).to.be.false;
+        this.unlock.click();
+        browser.pause(600);
+        this.unlock.click();
+        browser.pause(600);
+        this.unlock.click();
+        browser.pause(600);
+        this.unlock.click();
+        browser.pause(600);
+        expect(this.lock.isDisplayed()).to.be.true;
+    }
 
-      if (image !== '') {
-          const imageDisplayed = $(
-              '//div[@class="Symbol"]//img[contains(@src,"' + image + '")]'
-          ).isDisplayed();
-          return tileDisplayed && imageDisplayed;
-      } else {
-          return tileDisplayed;
-      }
-  }
+    clickOnCreateTiles() {
+        this.createTiles.click();
+    }
 
-  isSettingsDisplayed() {
-    return this.settings.isDisplayed();
-  }
+    isTileDisplayed(label, image = '') {
+        const tileDisplayed = $(
+            '//div[@class="Symbol"]//div[text()="' + label + '"]'
+        ).isDisplayed();
 
-  isFullScreenDisplayed() {
-    return this.fullScreen.isDisplayed();
-  }
+        if (image !== '') {
+            const imageDisplayed = $(
+                '//div[@class="Symbol"]//img[contains(@src,"' + image + '")]'
+            ).isDisplayed();
+            return tileDisplayed && imageDisplayed;
+        } else {
+            return tileDisplayed;
+        }
+    }
 
-  isPrintBoardisplayed() {
-    return this.printBoard.isDisplayed();
-  }
+    isSettingsDisplayed() {
+        return this.settings.isDisplayed();
+    }
 
-  isCommunicatorBarDisplayed() {
-    return this.communicatorBar.isDisplayed();
-  }
+    isFullScreenDisplayed() {
+        return this.fullScreen.isDisplayed();
+    }
 
-  isBoardEditBarDisplayed() {
-    return this.boardEditBar.isDisplayed();
-  }
+    isPrintBoardisplayed() {
+        return this.printBoard.isDisplayed();
+    }
 
-  isTileDisplayedInCommunicatorBar(label) {
-    return $(
-      '//div[@class="SymbolOutput"]//div[@class="Symbol__label" and text()="' +
-        label +
-        '"]'
-    ).isDisplayed();
-  }
+    isCommunicatorBarDisplayed() {
+        return this.communicatorBar.isDisplayed();
+    }
 
-  clickOnRandomTileButton() {
-    this.tile.waitForDisplayed(4000);
-    var length = this.tileButton.length;
-    var options = {
-      min: 0,
-      max: length - 1,
-      integer: true
-    };
-    var index = rn(options);
-    $$('//button[@class="Tile"]')[index].click();
-    return $$('//button[@class="Tile"]')[index].getText();
-  }
+    isBoardEditBarDisplayed() {
+        return this.boardEditBar.isDisplayed();
+    }
 
-  countCommunicatorBarTiles() {
-    return this.tilesInCommunicator.length;
-  }
+    isTileDisplayedInCommunicatorBar(label) {
+        return $(
+            '//div[@class="SymbolOutput"]//div[@class="Symbol__label" and text()="' +
+            label +
+            '"]'
+        ).isDisplayed();
+    }
 
-  clearCommunicatorBarTiles() {
-    return this.clear.click();
-  }
+    clickOnRandomTileButton() {
+        this.tile.waitForDisplayed(4000);
+        var length = this.tileButton.length;
+        var options = {
+            min: 0,
+            max: length - 1,
+            integer: true
+        };
+        var index = rn(options);
+        $$('//button[@class="Tile"]')[index].click();
+        return $$('//button[@class="Tile"]')[index].getText();
+    }
 
-  clickOnSetttings() {
-    return this.settings.click();
-  }
+    countCommunicatorBarTiles() {
+        return this.tilesInCommunicator.length;
+    }
+
+    clearCommunicatorBarTiles() {
+        return this.clear.click();
+    }
+
+    clickOnSetttings() {
+        return this.settings.click();
+    }
+
+    isContentCatchMessageDisplayed() {
+        return this.contentCachedMessage.isDisplayed();
+    }
 }
-
 export default new RootAppPage();

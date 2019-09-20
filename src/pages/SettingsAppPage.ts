@@ -48,6 +48,7 @@ class SettingsAppPage extends BasePage {
         RootAppPage.unblockSettings();
         RootAppPage.clickOnSetttings();
         expect(this.pageH6.isDisplayed()).to.be.true;
+        browser.waitUntil(() => !RootAppPage.isContentCatchMessageDisplayed());
     }
 
     reload() {
@@ -72,7 +73,7 @@ class SettingsAppPage extends BasePage {
         return this.display.click();
     }
     clickOnNavigation() {
-        this.navigation.waitForEnabled(6000);
+        this.navigation.waitForDisplayed(6000);
         return this.navigation.click();
     }
     clickOnScanning() {
