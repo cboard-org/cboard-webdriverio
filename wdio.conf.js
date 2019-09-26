@@ -64,6 +64,13 @@ exports.config = {
         browserName: 'safari',
         browser: 'safari',
         browserVersion: '12'
+    }, {
+        maxInstances: 2,
+        browserName: 'chrome',
+        browser: 'chrome',
+        device: 'Samsung Galaxy Tab S4',
+        realMobile: 'true'
+
     }],
     //
     // ===================
