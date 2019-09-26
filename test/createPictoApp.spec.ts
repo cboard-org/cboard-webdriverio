@@ -6,6 +6,7 @@ import RootAppPage from 'src/pages/RootAppPage';
 
 describe('Create pictograms page', function() {
     beforeEach(function () {
+        browser.reloadSession();
     CreatePictoAppPage.open();
   });
 

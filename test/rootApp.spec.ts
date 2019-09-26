@@ -4,6 +4,7 @@ import RootAppPage from 'src/pages/RootAppPage';
 
 describe('Root board page', function () {
     beforeEach(function () {
+        browser.reloadSession();
         RootAppPage.open();
     });
 
