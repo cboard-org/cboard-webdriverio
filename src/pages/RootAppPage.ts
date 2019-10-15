@@ -48,7 +48,9 @@ class RootAppPage extends BasePage {
   get printBoard() {
     return $('//*[@aria-label="Print Board"]');
   }
-
+  get noSymbol() {
+    return $('//*[@id="scannable"]//img[@src="/symbols/mulberry/no.svg"]');
+  }
   get contentCachedMessage() {
     return $('//*[contains(.,"Content is cached for offline use")]');
   }
@@ -72,6 +74,7 @@ class RootAppPage extends BasePage {
 
   unblockSettings() {
     if (!this.lock.isDisplayed()) {
+      this.noSymbol.waitForDisplayed(10000);
       this.unlock.click();
       browser.pause(300);
       this.unlock.click();
