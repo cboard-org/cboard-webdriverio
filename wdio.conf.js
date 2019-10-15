@@ -58,7 +58,8 @@ exports.config = {
     }, {
       maxInstances: 3,
       browserName: 'safari',
-      browser: 'safari'
+        browser: 'safari',
+      browserVersion: '12'
     }],
     //
     // ===================
