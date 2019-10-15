@@ -17,10 +17,10 @@ describe('Root board page', function () {
 
     it('should display the valid page title after refresh the page', function () {
         expect(RootAppPage.isRootBoard(), 'Root board not detected').to.be.true;
-        const page = browser.getUrl();
+        let page = browser.getUrl();
         browser.url(page);
         expect(RootAppPage.isRootBoard(), 'Root board not detected').to.be.true;
-        const page = browser.getUrl();
+        page = browser.getUrl();
         browser.url(page);
         expect(RootAppPage.isRootBoard(), 'Root board not detected').to.be.true;
     });
