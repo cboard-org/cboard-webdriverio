@@ -72,13 +72,12 @@ class RootAppPage extends BasePage {
 
   unblockSettings() {
     if (!this.lock.isDisplayed()) {
-      browser.pause(600);
       this.unlock.click();
-      browser.pause(600);
+      browser.pause(300);
       this.unlock.click();
-      browser.pause(600);
+      browser.pause(300);
       this.unlock.click();
-      browser.pause(600);
+      browser.pause(300);
       this.unlock.click();
       browser.pause(600);
       expect(this.lock.isDisplayed()).to.be.true;
