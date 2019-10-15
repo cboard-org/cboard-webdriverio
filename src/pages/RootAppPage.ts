@@ -75,15 +75,20 @@ class RootAppPage extends BasePage {
   unblockSettings() {
     if (!this.lock.isDisplayed()) {
       this.noSymbol.waitForDisplayed(10000);
-      this.unlock.click();
-      browser.pause(300);
-      this.unlock.click();
-      browser.pause(300);
-      this.unlock.click();
-      browser.pause(300);
-      this.unlock.click();
-      browser.pause(600);
-      expect(this.lock.isDisplayed()).to.be.true;
+      for (let i = 0; i < 3; i++) {
+        this.unlock.click();
+        browser.pause(300);
+        this.unlock.click();
+        browser.pause(300);
+        this.unlock.click();
+        browser.pause(300);
+        this.unlock.click();
+        browser.pause(500);
+        if (this.lock.isDisplayed()) {
+          break;
+        }
+        browser.pause(3000);
+      }
     }
   }
 
