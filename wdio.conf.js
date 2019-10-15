@@ -57,9 +57,8 @@ exports.config = {
       browser: 'chrome'
     }, {
       maxInstances: 3,
-      browserName: 'chrome',
-      browser: 'chrome',
-      device: 'Samsung Galaxy Tab S4'
+      browserName: 'safari',
+      browser: 'safari'
     }],
     //
     // ===================
