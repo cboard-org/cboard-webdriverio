@@ -70,7 +70,7 @@ class WelcomeAppPage extends BasePage {
                 'Login Error message not displayed'
             );
         } else {
-            RootAppPage.checkTitle();
+          RootAppPage.noSymbol.waitForDisplayed(10000);
         }
     }
 
