@@ -43,7 +43,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 8,
+    maxInstances: 5,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -55,22 +55,6 @@ exports.config = {
         maxInstances: 1,
         browserName: 'chrome',
         browser: 'chrome'
-    }, {
-        maxInstances: 1,
-        browserName: 'firefox',
-        browser: 'firefox'
-    }, {
-        maxInstances: 1,
-        browserName: 'safari',
-        browser: 'safari',
-        browserVersion: '12'
-    }, {
-        maxInstances: 1,
-        browserName: 'chrome',
-        browser: 'chrome',
-        device: 'Samsung Galaxy Tab S4',
-        realMobile: 'true'
-
     }],
     //
     // ===================
