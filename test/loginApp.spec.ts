@@ -12,17 +12,17 @@ describe('Welcome page', function() {
   });
 
   it('should successfully login a valid user', function() {
-    WelcomeAppPage.loginUser('anything@cboard.io', '1122');
+    WelcomeAppPage.loginUser('anything@cboard.io', '112233');
   });
 
   it('should open and close and successfully login a valid user', function() {
     WelcomeAppPage.loginButton.click();
     WelcomeAppPage.cancelButton.click();
-    WelcomeAppPage.loginUser('anything@cboard.io', '1122');
+    WelcomeAppPage.loginUser('anything@cboard.io', '112233');
   });
 
   it('should reject a login with an invalid user', function() {
-    WelcomeAppPage.loginUser('nothing@cboard.io', '1122', true);
+    WelcomeAppPage.loginUser('nothing@cboard.io', '112233', true);
   });
 
   it('should skip login when user presses on skip button', function() {
