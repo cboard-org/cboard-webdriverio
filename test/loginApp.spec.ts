@@ -12,13 +12,13 @@ describe('Welcome page', function() {
   });
 
   it('should successfully login a valid user', function() {
-    WelcomeAppPage.loginUser('anything@cboard.io', '112233');
+    WelcomeAppPage.loginUser();
   });
 
   it('should open and close and successfully login a valid user', function() {
     WelcomeAppPage.loginButton.click();
     WelcomeAppPage.cancelButton.click();
-    WelcomeAppPage.loginUser('anything@cboard.io', '112233');
+    WelcomeAppPage.loginUser();
   });
 
   it('should reject a login with an invalid user', function() {

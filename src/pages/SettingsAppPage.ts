@@ -44,7 +44,7 @@ class SettingsAppPage extends BasePage {
      */
     open() {
         browser.url('/');
-        WelcomeAppPage.loginUser('anything@cboard.io', '112233');
+        WelcomeAppPage.loginUser();
         RootAppPage.unblockSettings();
         RootAppPage.clickOnSetttings();
         expect(this.pageH6.isDisplayed()).to.be.true;

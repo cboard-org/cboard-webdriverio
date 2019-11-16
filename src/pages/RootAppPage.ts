@@ -60,7 +60,7 @@ class RootAppPage extends BasePage {
    */
   open() {
     browser.url('/');
-    WelcomeAppPage.loginUser('anything@cboard.io', '112233');
+    WelcomeAppPage.loginUser();
   }
 
   checkTitle() {

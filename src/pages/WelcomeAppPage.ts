@@ -55,7 +55,10 @@ class WelcomeAppPage extends BasePage {
         super.reload();
     }
 
-    loginUser(username, password, loginError = false) {
+    loginUser(
+        username = 'anything@cboard.io',
+        password = '112233',
+        loginError = false) {
         this.loginButton.click();
         this.usernameInput.setValue(username);
         browser.pause(400);
