@@ -96,6 +96,10 @@ class RootAppPage extends BasePage {
     this.createTiles.click();
   }
 
+  isSpeaking() {
+    return browser.execute('window.speechSynthesis.speaking');
+  }
+
   isTileDisplayed(label, image = '') {
     const tileDisplayed = $(
       '//div[@class="Symbol"]//div[text()="' + label + '"]'
