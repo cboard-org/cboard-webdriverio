@@ -97,7 +97,9 @@ class RootAppPage extends BasePage {
   }
 
   isSpeaking() {
-    return browser.execute("window.speechSynthesis.speaking\n");
+    return browser.execute(function () {
+      return window.speechSynthesis.speaking;
+    });
   }
 
   isTileDisplayed(label, image = '') {
