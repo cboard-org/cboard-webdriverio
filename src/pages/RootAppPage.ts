@@ -178,7 +178,6 @@ class RootAppPage extends BasePage {
     };
     var index = rn(options);
     $$('//button[@class="Tile Tile--folder"]')[index].click();
-    return $$('//button[@class="Tile Tile--folder"]')[index].getText();
   }
 
   countCommunicatorBarTiles() {
