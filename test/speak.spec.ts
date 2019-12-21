@@ -18,4 +18,13 @@ describe('App can speak and', function () {
         browser.pause(3000);
         expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.false;
     });
+    it('should sound when output bar is clicked', function () {
+        RootAppPage.clickOnRandomTileButton();
+        browser.pause(3000);
+        expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.false;
+        RootAppPage.clickSymbolOutput();
+        expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.true;
+        browser.pause(3000);
+        expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.false;
+    });
 });

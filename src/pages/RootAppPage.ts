@@ -54,6 +54,9 @@ class RootAppPage extends BasePage {
   get contentCachedMessage() {
     return $('//*[contains(.,"Content is cached for offline use")]');
   }
+  get symbolOutput(){
+    return $('.SymbolOutput.Scroll.Scroll__container');
+  }
 
   /**
    * define or overwrite page methods
@@ -94,6 +97,10 @@ class RootAppPage extends BasePage {
 
   clickOnCreateTiles() {
     this.createTiles.click();
+  }
+
+  clickSymbolOutput(){
+    this.symbolOutput.click();
   }
 
   isSpeaking() {
