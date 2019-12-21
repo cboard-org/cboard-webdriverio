@@ -58,7 +58,7 @@ class RootAppPage extends BasePage {
     return $('//*[contains(.,"Content is cached for offline use")]');
   }
   get symbolOutput(){
-    return $('.SymbolOutput.Scroll.Scroll__container');
+    return $('.Scroll__container');
   }
 
   /**

@@ -27,7 +27,7 @@ describe('App can speak and', function () {
         browser.pause(5000);
         expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.false;
     });
-    it('should not sound when a tile buttton is clicked', function () {
+    it('should not sound when a tile folder is clicked', function () {
         expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.false;
         RootAppPage.clickOnRandomTileFolder();
         expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.false;
