@@ -60,8 +60,10 @@ class WelcomeAppPage extends BasePage {
         password = '112233',
         loginError = false) {
         this.loginButton.click();
+        this.usernameInput.click();
         this.usernameInput.setValue(username);
         browser.pause(400);
+        this.passwordInput.click();
         this.passwordInput.setValue(password);
         browser.pause(400);
         this.submitButton.click();
