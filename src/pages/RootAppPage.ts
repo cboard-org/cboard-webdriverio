@@ -27,6 +27,9 @@ class RootAppPage extends BasePage {
   get tileButton() {
     return $$('//button[@class="Tile"]');
   }
+  get tileFolder() {
+    return $$('//button[@class="Tile Tile--folder"]');
+  }
   get settings() {
     return $('//*[@aria-label="Settings"]');
   }
@@ -163,6 +166,19 @@ class RootAppPage extends BasePage {
     var index = rn(options);
     $$('//button[@class="Tile"]')[index].click();
     return $$('//button[@class="Tile"]')[index].getText();
+  }
+
+  clickOnRandomTileFolder() {
+    this.tile.waitForDisplayed(4000);
+    var length = this.tileFolder.length;
+    var options = {
+      min: 0,
+      max: length - 1,
+      integer: true
+    };
+    var index = rn(options);
+    $$('//button[@class="Tile Tile--folder"]')[index].click();
+    return $$('//button[@class="Tile Tile--folder"]')[index].getText();
   }
 
   countCommunicatorBarTiles() {
