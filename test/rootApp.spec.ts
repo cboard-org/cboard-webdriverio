@@ -33,7 +33,7 @@ describe('Root board page', function () {
     it('should display all icons and bars after unlock', function () {
         RootAppPage.unblockSettings();
         expect(RootAppPage.isSettingsDisplayed()).to.be.true;
-        expect(RootAppPage.isFullScreenDisplayed()).to.be.true;
+        expect(RootAppPage.isShareBoardDisplayed()).to.be.true;
         expect(RootAppPage.isPrintBoardisplayed()).to.be.true;
         expect(RootAppPage.isCommunicatorBarDisplayed()).to.be.true;
         expect(RootAppPage.isBoardEditBarDisplayed()).to.be.true;

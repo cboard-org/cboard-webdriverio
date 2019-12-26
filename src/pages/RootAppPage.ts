@@ -51,6 +51,9 @@ class RootAppPage extends BasePage {
   get printBoard() {
     return $('//*[@aria-label="Print Board"]');
   }
+  get shareBoard() {
+    return $('//buttton[@aria-label="Share"]');
+  }
   get noSymbol() {
     return $('//*[@id="scannable"]//img[@src="/symbols/mulberry/no.svg"]');
   }
@@ -133,6 +136,10 @@ class RootAppPage extends BasePage {
 
   isFullScreenDisplayed() {
     return this.fullScreen.isDisplayed();
+  }
+
+  isShareBoardDisplayed() {
+    return this.shareBoard.isDisplayed();
   }
 
   isPrintBoardisplayed() {
