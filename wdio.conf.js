@@ -17,7 +17,9 @@ exports.config = {
     capabilities: [{
         maxInstances: 3,
         browserName: 'chrome',
-        browser: 'chrome'
+        browser: 'chrome',
+        project: 'cboard',
+        build: 'chrome web'
     }, {
         maxInstances: 2,
         os_version: '9.0',

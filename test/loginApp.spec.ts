@@ -35,6 +35,6 @@ describe('Welcome page', function() {
         length: 16,
         charset: 'alphabetic'
       }) + '@cboard.io';
-    WelcomeAppPage.signupUser(newUser, newUser, '1122');
+    WelcomeAppPage.signupUser(newUser, newUser, '112233');
   });
 });

@@ -90,6 +90,7 @@ class WelcomeAppPage extends BasePage {
         this.usernameInput.setValue(username);
         this.passwordInput.setValue(password);
         this.passwordConfirmInput.setValue(password);
+        browser.pause(500);
         this.signmeupButton.click();
         var msg = browser.$('div.SignUp__status.SignUp__status--success').getText();
         expect(msg).to.contain(
