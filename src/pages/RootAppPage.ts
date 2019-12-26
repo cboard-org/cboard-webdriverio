@@ -52,7 +52,7 @@ class RootAppPage extends BasePage {
     return $('//*[@aria-label="Print Board"]');
   }
   get shareBoard() {
-    return $('//buttton[@aria-label="Share"]');
+    return $('//*[@aria-label="Share"]');
   }
   get noSymbol() {
     return $('//*[@id="scannable"]//img[@src="/symbols/mulberry/no.svg"]');
