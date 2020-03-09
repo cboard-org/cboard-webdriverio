@@ -20,15 +20,6 @@ exports.config = {
         browser: 'chrome',
         project: 'cboard',
         build: 'chrome web'
-    }, {
-        maxInstances: 2,
-        os_version: '9.0',
-        device: 'Samsung Galaxy Note 10 Plus',
-        real_mobile: 'true',
-        project: 'cboard',
-        build: 'android web',
-        'browserstack.appium_version': '1.11.1',
-        browserName: 'Android'
     }],
     // Level of logging verbosity: trace | debug | info | warn | error
     logLevel: 'error',
