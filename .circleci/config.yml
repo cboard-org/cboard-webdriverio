@@ -29,11 +29,11 @@ jobs:
         path: test-results
 
 workflows:
-    version: 2
-    qa_test:
-        jobs:
-        - run_tests:
-            context: qa-users
-            filters:
-                branches:
-                only: master
+  version: 2
+  qa_test:
+    jobs:
+      - run_tests:
+          context: qa-users
+          filters:
+            branches:
+              only: master
