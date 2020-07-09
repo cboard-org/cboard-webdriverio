@@ -56,7 +56,7 @@ class WelcomeAppPage extends BasePage {
     }
 
     loginUser(
-        username = 'anything@cboard.io',
+        username = process.env.CBOARD_USER ||'nothing@cboard.io',
         password = process.env.CBOARD_USER_PASSWORD || '112233',
         loginError = false) {
         this.loginButton.click();
