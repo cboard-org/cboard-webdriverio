@@ -106,7 +106,7 @@ class WelcomeAppPage extends BasePage {
 
         // Query the inbox
         let inbox;
-        axios.get(`${ENDPOINT}&tag=${name}&timestamp_from=${startTimestamp}&livequery=true`)
+        axios.get(`${ENDPOINT}&timestamp_from=${startTimestamp}&livequery=false`)
             .then((response) => {
                 inbox = response.data;
             })
