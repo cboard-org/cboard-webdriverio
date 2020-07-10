@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+const axios = require('axios').default;
 
 import BasePage from 'src/pages/BasePage';
 import RootAppPage from 'src/pages/RootAppPage';
@@ -56,7 +57,7 @@ class WelcomeAppPage extends BasePage {
     }
 
     loginUser(
-        username = process.env.CBOARD_USER ||'nothing@cboard.io',
+        username = process.env.CBOARD_USER || 'nothing@cboard.io',
         password = process.env.CBOARD_USER_PASSWORD || '112233',
         loginError = false) {
         this.loginButton.click();
@@ -75,7 +76,7 @@ class WelcomeAppPage extends BasePage {
                 'Login Error message not displayed'
             );
         } else {
-          RootAppPage.noSymbol.waitForDisplayed(10000);
+            RootAppPage.noSymbol.waitForDisplayed(10000);
         }
     }
 
@@ -91,11 +92,28 @@ class WelcomeAppPage extends BasePage {
         this.passwordInput.setValue(password);
         this.passwordConfirmInput.setValue(password);
         browser.pause(500);
+        //Record the start time for the timestamp_from filter
+        const startTimestamp = Date.now();
         this.signmeupButton.click();
         var msg = browser.$('div.SignUp__status.SignUp__status--success').getText();
         expect(msg).to.contain(
             'An email has been sent to you. Please check it to verify your account.'
         );
+        browser.pause(50000);
+
+        // Setup test mail JSON API endpoint
+        const ENDPOINT = `https://api.testmail.app/api/json?apikey=${process.env.TESTMAIL_APIKEY}&namespace=${process.env.TESTMAIL_NAMESPACE}`;
+
+        // Query the inbox
+        let inbox;
+        axios.get(`${ENDPOINT}&tag=${name}&timestamp_from=${startTimestamp}&livequery=true`)
+            .then((response) => {
+                inbox = response.data;
+            })
+            .catch((err) => {
+            });
+        expect(inbox.result).to.equal('success');
+        expect(inbox.count).to.equal(1);
     }
 }
 
