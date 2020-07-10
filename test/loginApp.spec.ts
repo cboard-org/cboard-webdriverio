@@ -30,11 +30,12 @@ describe('Welcome page', function() {
   });
 
   it('should successfully signup a valid user', function() {
-    var newUser =
-      randomstring.generate({
-        length: 16,
-        charset: 'alphabetic'
-      }) + '@cboard.io';
-    WelcomeAppPage.signupUser(newUser, newUser, '112233');
+    var tag =
+    randomstring.generate({
+      length: 16,
+      charset: 'alphabetic'
+    });
+    const email = `${process.env.TESTMAIL_NAMESPACE}.${tag}@inbox.testmail.app`;
+    WelcomeAppPage.signupUser(tag, email, process.env.CBOARD_USER_PASSWORD);
   });
 });
