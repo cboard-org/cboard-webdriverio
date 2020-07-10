@@ -106,12 +106,9 @@ class WelcomeAppPage extends BasePage {
 
         // Query the inbox
         let inbox;
-        axios.get(`${ENDPOINT}`)
+        axios.get(ENDPOINT)
             .then(function (response) {
                 inbox = response.data;
-            })
-            .catch(function (err) {
-                console.log(err);
             });
         expect(inbox.result).to.equal('success');
         expect(inbox.count).to.equal(1);
