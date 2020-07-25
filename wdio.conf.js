@@ -4,8 +4,8 @@ exports.config = {
     project: 'Cboard',
     build: 'build',
     name: 'name',
-    user: process.env.BROWSERSTACK_USERNAME || 'martinbedouret2',
-    key: process.env.BROWSERSTACK_ACCESS_KEY || 'zLQMgddNphRvEJE7bUYC',
+    user: process.env.BROWSERSTACK_USERNAME || '',
+    key: process.env.BROWSERSTACK_ACCESS_KEY || '',
     specs: [
         './test/**/*.ts'
     ],
