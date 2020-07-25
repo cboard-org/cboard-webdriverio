@@ -20,6 +20,14 @@ exports.config = {
         browser: 'chrome',
         project: 'cboard',
         build: 'chrome web'
+    }, {
+        maxInstances: 2,
+        os_version: '9.0',
+        device : 'Samsung Galaxy A10',
+        real_mobile: 'true',
+        project: 'cboard',
+        build: 'android web',
+        browserName: 'chrome'
     }],
     // Level of logging verbosity: trace | debug | info | warn | error
     logLevel: 'error',
