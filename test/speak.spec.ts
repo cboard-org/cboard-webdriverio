@@ -3,6 +3,12 @@ import { expect } from 'chai';
 import RootAppPage from 'src/pages/RootAppPage';
 
 describe('App can speak and', function () {
+    before(function () {
+        if (browser.capabilities.build === 'android web') {
+            this.skip();
+        }
+    });
+
     beforeEach(function () {
         browser.reloadSession();
         RootAppPage.open();
