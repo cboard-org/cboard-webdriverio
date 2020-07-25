@@ -4,7 +4,7 @@ import RootAppPage from 'src/pages/RootAppPage';
 
 describe('App can speak and', function () {
     before(function () {
-        if (browser.capabilities.build === 'android web') {
+        if (browser.capabilities.platformName === 'Android') {
             this.skip();
         }
     });
