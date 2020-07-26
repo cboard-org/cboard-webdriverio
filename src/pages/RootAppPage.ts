@@ -192,14 +192,22 @@ class RootAppPage extends BasePage {
     };
     var index = rn(options);
     $$('//button[@class="Tile Tile--folder"]')[index].click();
+    return $$('//button[@class="Tile Tile--folder"]')[index].getText();
   }
 
-  editPicto(tile) {
+  editPicto(property, type = 'button') {
     this.editBoard.click();
-    this.clickOnRandomTileButton();
+    let label;
+    if (type === 'folder') {
+      label = this.clickOnRandomTileFolder();
+    } else {
+      label = this.clickOnRandomTileButton();
+    }
     this.editSelectedTiles.click();
     CreatePictoAppPage.saveButton.click();
+    browser.pause(1000);
     this.editBoard.click();
+    return label;
   }
 
   countCommunicatorBarTiles() {

@@ -13,10 +13,17 @@ describe('Edit pictograms page', function () {
   afterEach(function () {
   });
 
+  it('should edit a button pictogram', function () {
+    const label = RootAppPage.editPicto('');
+    expect(RootAppPage.isTileDisplayed(label)).to.be.true;
+  });
+  it('should edit a folder pictogram', function () {
+    const label = RootAppPage.editPicto('','folder');
+    expect(RootAppPage.isTileDisplayed(label)).to.be.true;
+  });
   it('should edit a pictogram to simply update color', function () {
-    var tile = { label: 'yes', color: 'red' };
-    RootAppPage.editPicto(tile);
-    expect(RootAppPage.isTileDisplayed(tile.label)).to.be.true;
+    const label = RootAppPage.editPicto('color');
+    expect(RootAppPage.isTileDisplayed(label)).to.be.true;
   });
 
 });
