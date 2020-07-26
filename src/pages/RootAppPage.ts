@@ -191,8 +191,9 @@ class RootAppPage extends BasePage {
       integer: true
     };
     var index = rn(options);
+    const label = $$('//button[@class="Tile Tile--folder"]')[index].getText();
     $$('//button[@class="Tile Tile--folder"]')[index].click();
-    return $$('//button[@class="Tile Tile--folder"]')[index].getText();
+    return label;
   }
 
   editPicto(property, type = 'button') {
