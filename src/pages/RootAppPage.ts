@@ -4,6 +4,7 @@ var rn = require('random-number');
 
 import BasePage from 'src/pages/BasePage';
 import WelcomeAppPage from 'src/pages/WelcomeAppPage';
+import CreatePictoAppPage from 'src/pages/CreatePictoAppPage';
 
 class RootAppPage extends BasePage {
   /**
@@ -39,6 +40,12 @@ class RootAppPage extends BasePage {
   get communicatorBar() {
     return $('.CommunicatorToolbar.Board__communicator-toolbar');
   }
+  get editBoard() {
+    return $('//button[@aria-label="edit-board-tiles"]');
+  }
+  get editSelectedTiles() {
+    return $('//button[@aria-label="Edit selected tiles"]');
+  }
   get boardEditBar() {
     return $('.EditToolbar.Board__edit-toolbar');
   }
@@ -60,7 +67,7 @@ class RootAppPage extends BasePage {
   get contentCachedMessage() {
     return $('//*[contains(.,"Content is cached for offline use")]');
   }
-  get symbolOutput(){
+  get symbolOutput() {
     return $('.Scroll__container');
   }
 
@@ -105,7 +112,7 @@ class RootAppPage extends BasePage {
     this.createTiles.click();
   }
 
-  clickSymbolOutput(){
+  clickSymbolOutput() {
     this.symbolOutput.click();
   }
 
@@ -185,6 +192,14 @@ class RootAppPage extends BasePage {
     };
     var index = rn(options);
     $$('//button[@class="Tile Tile--folder"]')[index].click();
+  }
+
+  editPicto(tile) {
+    this.editBoard.click();
+    this.clickOnRandomTileButton();
+    this.editSelectedTiles.click();
+    CreatePictoAppPage.saveButton.click();
+    this.editBoard.click();
   }
 
   countCommunicatorBarTiles() {
