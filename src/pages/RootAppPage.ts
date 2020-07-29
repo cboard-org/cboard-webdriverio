@@ -46,6 +46,9 @@ class RootAppPage extends BasePage {
   get editSelectedTiles() {
     return $('//button[@aria-label="Edit selected tiles"]');
   }
+  get deleteSelectedTiles() {
+    return $('//button[@aria-label="Delete selected tiles"]');
+  }
   get boardEditBar() {
     return $('.EditToolbar.Board__edit-toolbar');
   }
@@ -178,8 +181,12 @@ class RootAppPage extends BasePage {
       integer: true
     };
     var index = rn(options);
-    $$('//button[@class="Tile"]')[index].click();
-    return $$('//button[@class="Tile"]')[index].getText();
+    if (this.tileButton[index].getText() !== 'no') {
+      this.tileButton[index].click();
+      return this.tileButton[index].getText();
+    } else {
+      this.clickOnRandomTileButton();
+    }
   }
 
   clickOnRandomTileFolder() {
@@ -215,6 +222,18 @@ class RootAppPage extends BasePage {
     }
     CreatePictoAppPage.saveButton.click();
     browser.pause(1000);
+    return label;
+  }
+
+  deletePicto(type = 'button') {
+    this.editBoard.click();
+    let label;
+    if (type === 'folder') {
+      label = this.clickOnRandomTileFolder();
+    } else {
+      label = this.clickOnRandomTileButton();
+    }
+    this.deleteSelectedTiles.click();
     return label;
   }
 
