@@ -15,13 +15,11 @@ exports.config = {
     ],
     maxInstances: 5,
     capabilities: [{
-        maxInstances: 3,
         browserName: 'chrome',
         browser: 'chrome',
         project: 'cboard',
         build: 'chrome web'
     }, {
-        maxInstances: 2,
         os_version: '9.0',
         device : 'Samsung Galaxy A10',
         real_mobile: 'true',

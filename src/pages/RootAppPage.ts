@@ -205,9 +205,16 @@ class RootAppPage extends BasePage {
       label = this.clickOnRandomTileButton();
     }
     this.editSelectedTiles.click();
+    let value;
+    if (property === 'color') {
+      value = CreatePictoAppPage.clickOnRandomColor();
+    } else if (property === 'label') {
+      label = CreatePictoAppPage.updateLabel();
+    } else if (property === 'vocaliztion') {
+      label = CreatePictoAppPage.updateVocalization();
+    }
     CreatePictoAppPage.saveButton.click();
     browser.pause(1000);
-    this.editBoard.click();
     return label;
   }
 
