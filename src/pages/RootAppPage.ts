@@ -73,6 +73,15 @@ class RootAppPage extends BasePage {
   get symbolOutput() {
     return $('.Scroll__container');
   }
+  get userHelp() {
+    return $('//*[@href="/settings/help"]');
+  }
+  get cboardHelpTitle() {
+    return $('h1=Cboard Help');
+  }
+  get cboardHelp() {
+    return $('//*[@aria-label="user-help"]');
+  }
 
   /**
    * define or overwrite page methods
@@ -251,6 +260,17 @@ class RootAppPage extends BasePage {
 
   isContentCatchMessageDisplayed() {
     return this.contentCachedMessage.isDisplayed();
+  }
+
+  isUserHelpButtonDisplayed() {
+    return this.userHelp.isDisplayed();
+  }
+
+  getUserHelp() {
+    this.unblockSettings();
+    this.userHelp.click();
+    this.cboardHelpTitle.waitForDisplayed(3000);
+    return this.cboardHelp.getText();
   }
 }
 export default new RootAppPage();

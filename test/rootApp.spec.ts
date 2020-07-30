@@ -56,4 +56,14 @@ describe('Root board page', function () {
         RootAppPage.clearCommunicatorBarTiles();
         expect(RootAppPage.countCommunicatorBarTiles()).to.equal(0);
     });
+
+    it('should display help when user clicks on help button', function () {
+        const help = RootAppPage.getUserHelp();
+        expect(help).to.have.string('Cboard is a free web application for children');
+        expect(help).to.have.string('This action will delete the board and it cannot be recovered');
+    });
+
+    it('should not display help when settings are blocked', function () {
+        expect(RootAppPage.isUserHelpButtonDisplayed()).to.be.false;
+    });
 });
