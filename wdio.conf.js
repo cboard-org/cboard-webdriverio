@@ -21,11 +21,17 @@ exports.config = {
         build: 'chrome web'
     }, {
         os_version: '9.0',
-        device : 'Samsung Galaxy A10',
+        device: 'Samsung Galaxy A10',
         real_mobile: 'true',
         project: 'cboard',
         build: 'android web',
         browserName: 'chrome'
+    // }, {
+    //     os_version: "11",
+    //     device: "iPhone 8",
+    //     real_mobile: "true",
+    //     build: 'ios web',
+    //     browserName: "safari"
     }],
     // Level of logging verbosity: trace | debug | info | warn | error
     logLevel: 'error',
