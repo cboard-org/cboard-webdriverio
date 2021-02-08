@@ -181,7 +181,7 @@ class RootAppPage extends BasePage {
     ).isDisplayed();
   }
 
-  async clickOnRandomTileButton() {
+  clickOnRandomTileButton() {
     this.tile.waitForDisplayed(4000);
     var length = this.tileButton.length;
     var options = {
@@ -190,7 +190,7 @@ class RootAppPage extends BasePage {
       integer: true
     };
     var index = rn(options);
-    const label = await this.tileButton[index].getText();
+    const label = this.tileButton[index].getText();
     if (label !== 'no') {
       this.tileButton[index].click();
       return label;
