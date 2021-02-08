@@ -191,12 +191,8 @@ class RootAppPage extends BasePage {
     };
     var index = rn(options);
     const label = this.tileButton[index].getText();
-    if (label !== 'no') {
-      this.tileButton[index].click();
-      return label;
-    } else {
-      this.clickOnRandomTileButton();
-    }
+    this.tileButton[index].click();
+    return label;
   }
 
   clickOnRandomTileFolder() {
@@ -215,7 +211,7 @@ class RootAppPage extends BasePage {
 
   editPicto(property, type = 'button') {
     this.editBoard.click();
-    let label;
+    let label = '';
     if (type === 'folder') {
       label = this.clickOnRandomTileFolder();
     } else {
