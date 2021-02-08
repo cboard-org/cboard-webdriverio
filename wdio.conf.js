@@ -6,6 +6,7 @@ exports.config = {
     name: 'name',
     user: process.env.BROWSERSTACK_USERNAME || '',
     key: process.env.BROWSERSTACK_ACCESS_KEY || '',
+    buildNumber: process.env.CIRCLE_BUILD_NUM || '',
     specs: [
         './test/**/*.ts'
     ],
@@ -18,20 +19,20 @@ exports.config = {
         browserName: 'chrome',
         browser: 'chrome',
         project: 'cboard',
-        build: 'chrome web'
+        build: 'chrome web - ' + buildNumber
     }, {
         os_version: '9.0',
         device: 'Samsung Galaxy A10',
         real_mobile: 'true',
         project: 'cboard',
-        build: 'android web',
+        build: 'android web - ' + buildNumber,
         browserName: 'chrome'
-    // }, {
-    //     os_version: "11",
-    //     device: "iPhone 8",
-    //     real_mobile: "true",
-    //     build: 'ios web',
-    //     browserName: "safari"
+        // }, {
+        //     os_version: "11",
+        //     device: "iPhone 8",
+        //     real_mobile: "true",
+        //     build: 'ios web',
+        //     browserName: "safari"
     }],
     // Level of logging verbosity: trace | debug | info | warn | error
     logLevel: 'error',
