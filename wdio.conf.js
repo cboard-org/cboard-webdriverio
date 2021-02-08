@@ -6,7 +6,6 @@ exports.config = {
     name: 'name',
     user: process.env.BROWSERSTACK_USERNAME || '',
     key: process.env.BROWSERSTACK_ACCESS_KEY || '',
-    buildNumber: process.env.CIRCLE_BUILD_NUM || '',
     specs: [
         './test/**/*.ts'
     ],
@@ -19,13 +18,13 @@ exports.config = {
         browserName: 'chrome',
         browser: 'chrome',
         project: 'cboard',
-        build: 'chrome web - ' + buildNumber
+        build: 'chrome web - ' + process.env.CIRCLE_BUILD_NUM
     }, {
         os_version: '9.0',
         device: 'Samsung Galaxy A10',
         real_mobile: 'true',
         project: 'cboard',
-        build: 'android web - ' + buildNumber,
+        build: 'android web - ' + process.env.CIRCLE_BUILD_NUM,
         browserName: 'chrome'
         // }, {
         //     os_version: "11",
