@@ -82,6 +82,15 @@ class RootAppPage extends BasePage {
   get cboardHelp() {
     return $('//*[@aria-label="user-help"]');
   }
+  get userAnalytics() {
+    return $('//a[@href="/analytics"]');
+  }
+  get cboardAnalyticsTitle() {
+    return $('//h6//span[contains(.,"Analytics")]');
+  }
+  get cboardAnalyticsCardValues() {
+    return $$('.StatCards__Card__Items__Text__Value');
+  }
 
   /**
    * define or overwrite page methods
@@ -268,5 +277,17 @@ class RootAppPage extends BasePage {
     this.cboardHelpTitle.waitForDisplayed(3000);
     return this.cboardHelp.getText();
   }
+
+  isAnalyticsButtonDisplayed() {
+    return this.userAnalytics.isDisplayed();
+  }
+
+  getAnalytics() {
+    this.unblockSettings();
+    this.userAnalytics.click();
+    this.cboardAnalyticsTitle.waitForDisplayed(3000);
+    return this.cboardAnalyticsCardValues.map(val => val.getText());
+  }
+
 }
 export default new RootAppPage();

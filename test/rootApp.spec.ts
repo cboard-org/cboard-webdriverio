@@ -66,4 +66,14 @@ describe('Root board page', function () {
     it('should not display help when settings are blocked', function () {
         expect(RootAppPage.isUserHelpButtonDisplayed()).to.be.false;
     });
+
+    it('should display analytics when user clicks on analytics button', function () {
+        const analytics = RootAppPage.getAnalytics();
+        expect(analytics).to.be.an('array');
+        analytics.forEach(value => expect(value).to.be.a('number'));
+    });
+
+    it('should not display analytics when settings are blocked', function () {
+        expect(RootAppPage.isAnalyticsButtonDisplayed()).to.be.false;
+    });
 });
