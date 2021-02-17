@@ -286,6 +286,7 @@ class RootAppPage extends BasePage {
     this.unblockSettings();
     this.userAnalytics.click();
     this.cboardAnalyticsTitle.waitForDisplayed(3000);
+    browser.pause(10000);
     return this.cboardAnalyticsCardValues.map(val => val.getText());
   }
 
