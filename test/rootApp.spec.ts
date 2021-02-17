@@ -70,7 +70,7 @@ describe('Root board page', function () {
     it('should display analytics when user clicks on analytics button', function () {
         const analytics = RootAppPage.getAnalytics();
         expect(analytics).to.be.an('array');
-        analytics.forEach(value => expect(value).to.be.a('number'));
+        analytics.forEach(value => expect(value).to.eql('0'));
     });
 
     it('should not display analytics when settings are blocked', function () {
