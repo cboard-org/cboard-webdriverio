@@ -28,9 +28,9 @@ exports.config = {
         browserName: 'chrome'
     }, {
         os: "OS X",
-        os_version: "Mojave",
+        os_version: "Big Sur",
         browserName: "Safari",
-        browser_version: "12.0",
+        browser_version: "14.0",
         browser: 'safari',
         project: 'cboard',
         build: 'safari web - ' + process.env.CIRCLE_BUILD_NUM
