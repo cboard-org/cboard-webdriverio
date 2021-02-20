@@ -26,6 +26,14 @@ exports.config = {
         project: 'cboard',
         build: 'android web - ' + process.env.CIRCLE_BUILD_NUM,
         browserName: 'chrome'
+    }, {
+        os: "OS X",
+        os_version: "Mojave",
+        browserName: "Safari",
+        browser_version: "12.0",
+        browser: 'safari',
+        project: 'cboard',
+        build: 'safari web - ' + process.env.CIRCLE_BUILD_NUM
         // }, {
         //     os_version: "11",
         //     device: "iPhone 8",
