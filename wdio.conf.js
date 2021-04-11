@@ -14,6 +14,7 @@ exports.config = {
         // 'path/to/excluded/files'
     ],
     maxInstances: 5,
+    maxInstancesPerCapability: 3,
     capabilities: [{
         browserName: 'chrome',
         browser: 'chrome',
