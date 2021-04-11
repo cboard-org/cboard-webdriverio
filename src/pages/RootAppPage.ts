@@ -274,7 +274,7 @@ class RootAppPage extends BasePage {
   getUserHelp() {
     this.unblockSettings();
     this.userHelp.click();
-    this.cboardHelpTitle.waitForDisplayed(3000);
+    this.cboardHelpTitle.waitForDisplayed(6000);
     return this.cboardHelp.getText();
   }
 

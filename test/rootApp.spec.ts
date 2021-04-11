@@ -58,6 +58,7 @@ describe('Root board page', function () {
     });
 
     it('should display help when user clicks on help button', function () {
+        browser.pause(4000);
         const help = RootAppPage.getUserHelp();
         expect(help).to.have.string('Cboard is a free web application for children');
         expect(help).to.have.string('This action will delete the board and it cannot be recovered');
