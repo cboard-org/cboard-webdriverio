@@ -27,7 +27,7 @@ describe('Edit pictograms page', function () {
   });
   it('should edit a pictogram to update label', function () {
     const label = RootAppPage.editPicto('label');
-    expect(RootAppPage.isTileDisplayed(label)).to.be.false;
+    expect(RootAppPage.isTileDisplayed(label)).to.be.true;
   });
   it('should edit a pictogram to simply update vocalization', function () {
     const label = RootAppPage.editPicto('vocalization');
