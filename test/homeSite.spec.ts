@@ -12,6 +12,7 @@ describe('cboard.io page', function() {
   it('should open the app', function() {
     HomePage.open();
     HomePage.clickOnStartCboard();
+    browser.pause(2500);
     var title = browser.getTitle();
     assert.equal(title, 'Cboard - AAC Communication Board');
   });
