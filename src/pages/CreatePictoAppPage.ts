@@ -94,9 +94,10 @@ class CreatePictoAppPage extends BasePage {
 			length: 5,
 			charset: 'alphabetic'
 		});
-		const oldLabel = this.labelInput.getText();
+		this.labelInput.doubleClick();
+		//const oldLabel = this.labelInput.getText();
 		this.labelInput.setValue(label);
-		return oldLabel;
+		return label;
 	}
 
 	updateVocalization() {
