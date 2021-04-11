@@ -183,11 +183,11 @@ class RootAppPage extends BasePage {
   }
 
   isTileDisplayedInCommunicatorBar(label) {
-    return $(
+    return !!$(
       '//div[@class="SymbolOutput"]//div[@class="Symbol__label" and text()="' +
       label +
       '"]'
-    ).isDisplayed();
+    );
   }
 
   clickOnRandomTileButton() {
