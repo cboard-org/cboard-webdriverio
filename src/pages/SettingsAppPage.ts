@@ -47,7 +47,7 @@ class SettingsAppPage extends BasePage {
         WelcomeAppPage.loginUser();
         RootAppPage.unblockSettings();
         RootAppPage.clickOnSetttings();
-        expect(this.pageH6.isDisplayed()).to.be.true;
+        this.pageH6.waitForDisplayed(4000);
         browser.waitUntil(() => !RootAppPage.isContentCatchMessageDisplayed());
     }
 
