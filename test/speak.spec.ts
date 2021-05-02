@@ -21,17 +21,14 @@ describe('App can speak and', function () {
         expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.false;
         RootAppPage.clickOnRandomTileButton();
         expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.true;
-        browser.pause(5000);
-        expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.false;
+        browser.waitUntil(() => RootAppPage.isSpeaking() === false, 10000);
     });
     it('should sound when output bar is clicked', function () {
         RootAppPage.clickOnRandomTileButton();
-        browser.pause(5000);
-        expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.false;
+        browser.waitUntil(() => RootAppPage.isSpeaking() === false, 10000);
         RootAppPage.clickSymbolOutput();
         expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.true;
-        browser.pause(5000);
-        expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.false;
+        browser.waitUntil(() => RootAppPage.isSpeaking() === false, 10000);
     });
     it('should not sound when a tile folder is clicked', function () {
         expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.false;
