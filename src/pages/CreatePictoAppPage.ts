@@ -94,7 +94,7 @@ class CreatePictoAppPage extends BasePage {
 			length: 5,
 			charset: 'alphabetic'
 		});
-		this.labelInput.doubleClick();
+		//this.labelInput.doubleClick();
 		//const oldLabel = this.labelInput.getText();
 		this.labelInput.setValue(label);
 		return label;
