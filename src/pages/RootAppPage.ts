@@ -144,9 +144,9 @@ class RootAppPage extends BasePage {
   }
 
   isTileDisplayed(label, image = '') {
+    browser.pause(1500);
     const el = $('//div[@class="Symbol"]//div[text()[contains(.,' + label + ')]]');
-    el.waitForDisplayed(5000);
-    const tileDisplayed = el.isDisplayed();
+    const tileDisplayed = !!el;
 
     if (image !== '') {
       const imageDisplayed = $(
