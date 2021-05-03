@@ -35,12 +35,13 @@ exports.config = {
         browser: 'safari',
         project: 'cboard',
         build: 'safari web - ' + process.env.CIRCLE_BUILD_NUM
-        }, {
-            os_version: "14",
-            device: "iPhone 11",
-            real_mobile: "true",
-            build: 'ios web',
-            browserName: "iPhone"
+    }, {
+        os_version: "14",
+        device: "iPhone 11",
+        real_mobile: "true",
+        browserName: "iPhone",
+        project: 'cboard',
+        build: 'ios web - ' + process.env.CIRCLE_BUILD_NUM
     }],
     // Level of logging verbosity: trace | debug | info | warn | error
     logLevel: 'error',
