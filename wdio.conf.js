@@ -21,8 +21,8 @@ exports.config = {
         project: 'cboard',
         build: 'chrome web - ' + process.env.CIRCLE_BUILD_NUM
     }, {
-        os_version: '9.0',
-        device: 'Samsung Galaxy A10',
+        os_version: '10.0',
+        device: 'Samsung Galaxy Note 20',
         real_mobile: 'true',
         project: 'cboard',
         build: 'android web - ' + process.env.CIRCLE_BUILD_NUM,
