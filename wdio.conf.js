@@ -78,7 +78,7 @@ exports.config = {
  connectionRetryCount: 3,
 
  host: 'hub.browserstack.com',
- services: [["selenium-standalone", {}], ["browserstack", {}]],
+ services: [["browserstack", {}]],
  framework: 'mocha',
 
  reporters: [
