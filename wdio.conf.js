@@ -35,16 +35,17 @@ exports.config = {
             realMobile: 'true',
             buildName: 'android web - ' + process.env.CIRCLE_BUILD_NUM,
         }
-    }
-        /* {
-            os: "OS X",
-            os_version: "Big Sur",
-            browserName: "Safari",
-            browser_version: "14.0",
-            browser: 'safari',
-            project: 'cboard',
-            build: 'safari web - ' + process.env.CIRCLE_BUILD_NUM
-        }, {
+    },
+    {
+        browserName: "Safari",
+        'bstack:options': {
+            osName: "OS X",
+            osVersion: "Big Sur",
+            browserVersion: "14.0",
+            projectName: 'cboard',
+            buildName: 'safari web - ' + process.env.CIRCLE_BUILD_NUM
+        }
+        /*, {
             os_version: "14",
             device: "iPhone 11",
             real_mobile: "true",
