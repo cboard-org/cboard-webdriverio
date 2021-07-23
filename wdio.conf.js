@@ -1,165 +1,165 @@
 const timeout = process.env.DEBUG ? 99999999 : 15000;
 
 exports.config = {
- project: 'Cboard',
- build: 'build',
- name: 'name',
- user: process.env.BROWSERSTACK_USERNAME || '',
- key: process.env.BROWSERSTACK_ACCESS_KEY || '',
+    project: 'Cboard',
+    build: 'build',
+    name: 'name',
+    user: process.env.BROWSERSTACK_USERNAME || '',
+    key: process.env.BROWSERSTACK_ACCESS_KEY || '',
 
- specs: [
-     './test/**/*.ts'
- ],
+    specs: [
+        './test/**/*.ts'
+    ],
 
- // Patterns to exclude.
- exclude: [
-     // 'path/to/excluded/files'
- ],
+    // Patterns to exclude.
+    exclude: [
+        // 'path/to/excluded/files'
+    ],
 
- maxInstances: 5,
- maxInstancesPerCapability: 3,
+    maxInstances: 5,
+    maxInstancesPerCapability: 3,
 
- capabilities: [{
-     browserName: 'chrome',
-      'bstack:options': {
-        projectName:  'cboard',
-        buildName: 'chrome web - ' + process.env.CIRCLE_BUILD_NUM
+    capabilities: [{
+        browserName: 'chrome',
+        'bstack:options': {
+            projectName: 'cboard',
+            buildName: 'chrome web - ' + process.env.CIRCLE_BUILD_NUM
         }
-     //browser: 'chrome',
-     //project: 'cboard',
-     //build: 'chrome web - ' + process.env.CIRCLE_BUILD_NUM
- }
- /*  {
-     os_version: '10.0',
-     device: 'Samsung Galaxy Note 20',
-     real_mobile: 'true',
-     project: 'cboard',
-     build: 'android web - ' + process.env.CIRCLE_BUILD_NUM,
-     browserName: 'chrome'
- }, {
-     os: "OS X",
-     os_version: "Big Sur",
-     browserName: "Safari",
-     browser_version: "14.0",
-     browser: 'safari',
-     project: 'cboard',
-     build: 'safari web - ' + process.env.CIRCLE_BUILD_NUM
- }, {
-     os_version: "14",
-     device: "iPhone 11",
-     real_mobile: "true",
-     browserName: "iPhone",
-     project: 'cboard',
-     build: 'ios web - ' + process.env.CIRCLE_BUILD_NUM
- }], */
-],
+    },
+    {
+        browserName: 'chrome',
+        'bstack:options': {
+            projectName: 'cboard',
+            os_version: '10.0',
+            device: 'Samsung Galaxy Note 20',
+            real_mobile: 'true',
+            build: 'android web - ' + process.env.CIRCLE_BUILD_NUM,
+        }
+    }
+        /* {
+            os: "OS X",
+            os_version: "Big Sur",
+            browserName: "Safari",
+            browser_version: "14.0",
+            browser: 'safari',
+            project: 'cboard',
+            build: 'safari web - ' + process.env.CIRCLE_BUILD_NUM
+        }, {
+            os_version: "14",
+            device: "iPhone 11",
+            real_mobile: "true",
+            browserName: "iPhone",
+            project: 'cboard',
+            build: 'ios web - ' + process.env.CIRCLE_BUILD_NUM
+        }], */
+    ],
 
- // Level of logging verbosity: trace | debug | info | warn | error
- logLevel: 'error',
+    // Level of logging verbosity: trace | debug | info | warn | error
+    logLevel: 'error',
 
- //
- // Warns when a deprecated command is used
- deprecationWarnings: true,
+    //
+    // Warns when a deprecated command is used
+    deprecationWarnings: true,
 
- //
- // If you only want to run your tests until a specific amount of tests have failed use
- // bail (default is 0 - don't bail, run all tests).
- bail: 0,
+    //
+    // If you only want to run your tests until a specific amount of tests have failed use
+    // bail (default is 0 - don't bail, run all tests).
+    bail: 0,
 
- baseUrl: 'https://app.qa.cboard.io',
+    baseUrl: 'https://app.qa.cboard.io',
 
- //
- // Default timeout for all waitFor* commands.
- waitforTimeout: 90000,
+    //
+    // Default timeout for all waitFor* commands.
+    waitforTimeout: 90000,
 
- //
- // Default timeout in milliseconds for request
- // if Selenium Grid doesn't send response
- connectionRetryTimeout: 90000,
+    //
+    // Default timeout in milliseconds for request
+    // if Selenium Grid doesn't send response
+    connectionRetryTimeout: 90000,
 
- //
- // Default request retries count
- connectionRetryCount: 3,
+    //
+    // Default request retries count
+    connectionRetryCount: 3,
 
- host: 'hub.browserstack.com',
- services: [["browserstack", {}]],
- framework: 'mocha',
+    host: 'hub.browserstack.com',
+    services: [["browserstack", {}]],
+    framework: 'mocha',
 
- reporters: [
-     'dot',
-     'concise',
-     ['junit', {
-         outputDir: 'test-results',
-         outputFileFormat: function (opts) { // optional
-             return `results-${opts.cid}.${opts.capabilities}.xml`
-         }
-     }]
- ],
+    reporters: [
+        'dot',
+        'concise',
+        ['junit', {
+            outputDir: 'test-results',
+            outputFileFormat: function (opts) { // optional
+                return `results-${opts.cid}.${opts.capabilities}.xml`
+            }
+        }]
+    ],
 
- //
- // Options to be passed to Mocha.
- // See the full list at http://mochajs.org/
- mochaOpts: {
-     timeout: 90000,
-     compilers: [
-         'tsconfig-paths/register'
-     ],
-     ui: 'bdd'
- },
+    //
+    // Options to be passed to Mocha.
+    // See the full list at http://mochajs.org/
+    mochaOpts: {
+        timeout: 90000,
+        compilers: [
+            'tsconfig-paths/register'
+        ],
+        ui: 'bdd'
+    },
 
- //
- // =====
- // Hooks
- // =====
- // WebdriverIO provides several hooks you can use to interfere with the test process in order to enhance
- // it and to build services around it. You can either apply a single function or an array of
- // methods to it. If one of them returns with a promise, WebdriverIO will wait until that promise got
- // resolved to continue.
- /**
-  * Gets executed once before all workers get launched.
-  * @param {Object} config wdio configuration object
-  * @param {Array.<Object>} capabilities list of capabilities details
-  */
- // onPrepare: function (config, capabilities) {
- // },
- /**
-  * Gets executed just before initialising the webdriver session and test framework. It allows you
-  * to manipulate configurations depending on the capability or spec.
-  * @param {Object} config wdio configuration object
-  * @param {Array.<Object>} capabilities list of capabilities details
-  * @param {Array.<String>} specs List of spec file paths that are to be run
-  */
- // beforeSession: function (config, capabilities, specs) {
- // },
- /**
-  * Gets executed before test execution begins. At this point you can access to all global
-  * variables like `browser`. It is the perfect place to define custom commands.
-  * @param {Array.<Object>} capabilities list of capabilities details
-  * @param {Array.<String>} specs List of spec file paths that are to be run
-  */
- // beforeCommand: function (commandName, args) {
- // },
- // beforeSuite: function (suite) {
- // },
- // beforeTest: function (test) {
- // },
- // beforeHook: function () {
- // },
- // afterHook: function () {
- // },
- // afterTest: function (test) {
- // },
- // afterSuite: function (suite) {
- // },
- // afterCommand: function (commandName, args, result, error) {
- // },
- // after: function (result, capabilities, specs) {
- // },
- // afterSession: function (config, capabilities, specs) {
- // },
- // onComplete: function(exitCode, config, capabilities, results) {
- // }
- before: function (capabilities, specs) {}
+    //
+    // =====
+    // Hooks
+    // =====
+    // WebdriverIO provides several hooks you can use to interfere with the test process in order to enhance
+    // it and to build services around it. You can either apply a single function or an array of
+    // methods to it. If one of them returns with a promise, WebdriverIO will wait until that promise got
+    // resolved to continue.
+    /**
+     * Gets executed once before all workers get launched.
+     * @param {Object} config wdio configuration object
+     * @param {Array.<Object>} capabilities list of capabilities details
+     */
+    // onPrepare: function (config, capabilities) {
+    // },
+    /**
+     * Gets executed just before initialising the webdriver session and test framework. It allows you
+     * to manipulate configurations depending on the capability or spec.
+     * @param {Object} config wdio configuration object
+     * @param {Array.<Object>} capabilities list of capabilities details
+     * @param {Array.<String>} specs List of spec file paths that are to be run
+     */
+    // beforeSession: function (config, capabilities, specs) {
+    // },
+    /**
+     * Gets executed before test execution begins. At this point you can access to all global
+     * variables like `browser`. It is the perfect place to define custom commands.
+     * @param {Array.<Object>} capabilities list of capabilities details
+     * @param {Array.<String>} specs List of spec file paths that are to be run
+     */
+    // beforeCommand: function (commandName, args) {
+    // },
+    // beforeSuite: function (suite) {
+    // },
+    // beforeTest: function (test) {
+    // },
+    // beforeHook: function () {
+    // },
+    // afterHook: function () {
+    // },
+    // afterTest: function (test) {
+    // },
+    // afterSuite: function (suite) {
+    // },
+    // afterCommand: function (commandName, args, result, error) {
+    // },
+    // after: function (result, capabilities, specs) {
+    // },
+    // afterSession: function (config, capabilities, specs) {
+    // },
+    // onComplete: function(exitCode, config, capabilities, results) {
+    // }
+    before: function (capabilities, specs) { }
  /**
   * Runs before a WebdriverIO command gets executed.
   * @param {String} commandName hook command name
@@ -219,11 +219,11 @@ exports.config = {
   * @param {<Object>} results object containing test results
   */,
 
- autoCompileOpts: {
-  autoCompile: true,
+    autoCompileOpts: {
+        autoCompile: true,
 
-  tsNodeOpts: {
-   files: true
-  }
- }
+        tsNodeOpts: {
+            files: true
+        }
+    }
 }
