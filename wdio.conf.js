@@ -21,10 +21,11 @@ exports.config = {
 
  capabilities: [{
      browserName: 'chrome',
-     browser: 'chrome',
-     project: 'cboard',
-     build: 'chrome web - ' + process.env.CIRCLE_BUILD_NUM
- }, {
+     //browser: 'chrome',
+     //project: 'cboard',
+     //build: 'chrome web - ' + process.env.CIRCLE_BUILD_NUM
+ }
+ /*  {
      os_version: '10.0',
      device: 'Samsung Galaxy Note 20',
      real_mobile: 'true',
@@ -46,7 +47,8 @@ exports.config = {
      browserName: "iPhone",
      project: 'cboard',
      build: 'ios web - ' + process.env.CIRCLE_BUILD_NUM
- }],
+ }], */
+],
 
  // Level of logging verbosity: trace | debug | info | warn | error
  logLevel: 'error',
