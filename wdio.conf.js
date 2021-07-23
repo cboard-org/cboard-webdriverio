@@ -30,10 +30,10 @@ exports.config = {
         browserName: 'chrome',
         'bstack:options': {
             projectName: 'cboard',
-            os_version: '10.0',
+            osVersion: '10.0',
             device: 'Samsung Galaxy Note 20',
-            real_mobile: 'true',
-            build: 'android web - ' + process.env.CIRCLE_BUILD_NUM,
+            realMobile: 'true',
+            buildName: 'android web - ' + process.env.CIRCLE_BUILD_NUM,
         }
     }
         /* {
