@@ -31,7 +31,7 @@ exports.config = {
         'bstack:options': {
             projectName: 'cboard',
             osVersion: '10.0',
-            device: 'Samsung Galaxy Note 20',
+            deviceName: 'Samsung Galaxy Note 20',
             realMobile: 'true',
             buildName: 'android web - ' + process.env.CIRCLE_BUILD_NUM,
         }
