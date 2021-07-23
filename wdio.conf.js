@@ -155,9 +155,7 @@ exports.config = {
  // },
  // onComplete: function(exitCode, config, capabilities, results) {
  // }
- before: function (capabilities, specs) {
-     require('ts-node').register({ files: true });
- }
+ before: function (capabilities, specs) {}
  /**
   * Runs before a WebdriverIO command gets executed.
   * @param {String} commandName hook command name
@@ -215,5 +213,13 @@ exports.config = {
   * @param {Object} config wdio configuration object
   * @param {Array.<Object>} capabilities list of capabilities details
   * @param {<Object>} results object containing test results
-  */
+  */,
+
+ autoCompileOpts: {
+  autoCompile: true,
+
+  tsNodeOpts: {
+   files: true
+  }
+ }
 }
