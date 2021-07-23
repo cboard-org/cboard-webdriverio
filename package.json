@@ -13,16 +13,16 @@
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.0.12",
-    "@wdio/browserstack-service": "^6.12.1",
-    "@wdio/cli": "^6.12.1",
-    "@wdio/concise-reporter": "^6.11.0",
-    "@wdio/dot-reporter": "^6.11.0",
-    "@wdio/junit-reporter": "^6.11.0",
-    "@wdio/local-runner": "^6.12.1",
-    "@wdio/mocha-framework": "^6.11.0",
-    "@wdio/selenium-standalone-service": "^6.12.1",
-    "@wdio/spec-reporter": "^6.11.0",
-    "@wdio/sync": "^6.11.0",
+    "@wdio/browserstack-service": "5.10.8",
+    "@wdio/cli": "5.10.10",
+    "@wdio/concise-reporter": "5.9.3",
+    "@wdio/dot-reporter": "5.9.3",
+    "@wdio/junit-reporter": "5.9.3",
+    "@wdio/local-runner": "5.10.10",
+    "@wdio/mocha-framework": "5.10.10",
+    "@wdio/selenium-standalone-service": "5.9.3",
+    "@wdio/spec-reporter": "5.9.3",
+    "@wdio/sync": "5.10.8",
     "axios": "^0.19.2",
     "chai": "^4.2.0",
     "dotenv": "8.0.0",
@@ -34,10 +34,6 @@
     "tsconfig-paths": "^3.8.0",
     "tslint": "^5.18.0",
     "typescript": "^3.5.2",
-    "webdriverio": "^6.12.1"
-  },
-  "dependencies": {
-    "@wdio/codemod": "^0.9.0",
-    "jscodeshift": "^0.13.0"
+    "webdriverio": "^5.10.10"
   }
 }
