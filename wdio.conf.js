@@ -45,15 +45,16 @@ exports.config = {
             projectName: 'cboard',
             buildName: 'safari web - ' + process.env.CIRCLE_BUILD_NUM
         }
+    }, {
+        browserName: "iPhone",
+        'bstack:options': {
+            osVersion: "14",
+            deviceName: "iPhone 11",
+            realMobile: 'true',
+            buildName: 'ios web - ' + process.env.CIRCLE_BUILD_NUM,
+            projectName: 'cboard',
+        }
     }
-        /*, {
-            os_version: "14",
-            device: "iPhone 11",
-            real_mobile: "true",
-            browserName: "iPhone",
-            project: 'cboard',
-            build: 'ios web - ' + process.env.CIRCLE_BUILD_NUM
-        }], */
     ],
 
     // Level of logging verbosity: trace | debug | info | warn | error
