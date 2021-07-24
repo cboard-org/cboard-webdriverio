@@ -45,6 +45,7 @@ exports.config = {
             projectName: 'cboard',
             buildName: 'safari web - ' + process.env.CIRCLE_BUILD_NUM
         }
+    }
         /*, {
             os_version: "14",
             device: "iPhone 11",
