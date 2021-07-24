@@ -39,7 +39,7 @@ exports.config = {
     {
         browserName: "Safari",
         'bstack:options': {
-            osName: "OS X",
+            os: "OS X",
             osVersion: "Big Sur",
             browserVersion: "14.0",
             projectName: 'cboard',
