@@ -16,4 +16,9 @@ describe('Languages functionality', function () {
     it('should display available languages list', function () {
         expect(LanguagesAppPage.getLangs()).to.not.be.empty;
     });
+    it('should change to any language from the languages list', function () {
+        LanguagesAppPage.clickOnRandomLanguage();
+        LanguagesAppPage.clickOnSave();
+        expect(SettingsPage.isDisplayed()).to.be.false;
+    });
 });

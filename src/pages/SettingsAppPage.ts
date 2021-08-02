@@ -84,6 +84,10 @@ class SettingsAppPage extends BasePage {
         this.exportButton.click();
         this.exportFormatMenu.selectByVisibleText(format);
     }
+
+    isDisplayed() {
+        return this.pageH6.isDisplayed();
+    }
 }
 
 export default new SettingsAppPage();
