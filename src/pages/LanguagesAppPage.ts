@@ -40,7 +40,6 @@ class LanguagesAppPage extends BasePage {
         RootAppPage.clickOnSetttings();
         SettingsAppPage.clickOnLanguage();
         this.pageH6.waitForDisplayed(4000);
-        browser.waitUntil(() => !RootAppPage.isContentCatchMessageDisplayed());
     }
 
     reload() {
@@ -48,7 +47,8 @@ class LanguagesAppPage extends BasePage {
     }
 
     clickOnRandomLanguage() {
-        const items = this.languageItemList;
+        let items = this.languageItemList;
+        items = items.filter(element => element.$('p').getText() !== 'English')
         var item = items[Math.floor(Math.random() * items.length)];
         return item.click();
     }
