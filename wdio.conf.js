@@ -8,7 +8,7 @@ exports.config = {
     key: process.env.BROWSERSTACK_ACCESS_KEY || '',
 
     specs: [
-        './test/**/*.ts'
+        './test/**/languagesApp.spec.ts'
     ],
 
     // Patterns to exclude.

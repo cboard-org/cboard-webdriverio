@@ -34,7 +34,9 @@ class LanguagesAppPage extends BasePage {
     open() {
         browser.url('/');
         WelcomeAppPage.loginSkip();
+        RootAppPage.skipTour();
         RootAppPage.unblockSettings();
+        RootAppPage.skipTour();
         RootAppPage.clickOnSetttings();
         SettingsAppPage.clickOnLanguage();
         this.pageH6.waitForDisplayed(4000);

@@ -91,6 +91,9 @@ class RootAppPage extends BasePage {
   get cboardAnalyticsCardValues() {
     return $$('.StatCards__Card__Items__Text__Value');
   }
+  get closeTourButton() {
+    return $('//buttton[@data-action="skip"]');
+  }
 
   /**
    * define or overwrite page methods
@@ -289,6 +292,10 @@ class RootAppPage extends BasePage {
     this.cboardAnalyticsTitle.waitForDisplayed(3000);
     browser.pause(10000);
     return this.cboardAnalyticsCardValues.map(val => val.getText());
+  }
+
+  skipTour() {
+    this.closeTourButton.click();
   }
 
 }
