@@ -92,7 +92,7 @@ class RootAppPage extends BasePage {
     return $$('.StatCards__Card__Items__Text__Value');
   }
   get closeTourButton() {
-    return $('//buttton[@data-action="skip"]');
+    return $('span=Close Tour');
   }
 
   /**
