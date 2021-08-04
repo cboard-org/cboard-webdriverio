@@ -21,4 +21,13 @@ describe('Languages functionality', function () {
         LanguagesAppPage.clickOnSave();
         expect(SettingsPage.isDisplayed()).to.be.false;
     });
+    it('should change to english language', function () {
+        LanguagesAppPage.clickOnLanguage('Spanish');
+        LanguagesAppPage.clickOnSave();
+        SettingsPage.clickOnLanguage();
+        LanguagesAppPage.clickOnLanguage('Inglés');
+        LanguagesAppPage.clickOnSave();
+        SettingsPage.clickOnLanguage();
+        LanguagesAppPage.clickOnLanguage('English');
+    });
 });
