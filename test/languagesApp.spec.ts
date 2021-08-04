@@ -30,4 +30,14 @@ describe('Languages functionality', function () {
         SettingsPage.clickOnLanguage();
         LanguagesAppPage.clickOnLanguage('English');
     });
+    it('should change to french language', function () {
+        LanguagesAppPage.clickOnLanguage('French');
+        LanguagesAppPage.clickOnSave();
+        SettingsPage.clickOnLanguage();
+        LanguagesAppPage.clickOnLanguage('Espagnol');
+        LanguagesAppPage.clickOnSave();
+        SettingsPage.clickOnLanguage();
+        LanguagesAppPage.clickOnLanguage('Francés');
+        LanguagesAppPage.clickOnSave();
+    });
 });
