@@ -58,7 +58,7 @@ class LanguagesAppPage extends BasePage {
     }
 
     clickOnLanguage(lang) {
-        $('//p[text()="' + lang + '"]').click();
+        $('//p//span[text()="' + lang + '"]').click();
     }
 
     clickOnSave() {
