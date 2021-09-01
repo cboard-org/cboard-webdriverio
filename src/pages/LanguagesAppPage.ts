@@ -38,6 +38,7 @@ class LanguagesAppPage extends BasePage {
         RootAppPage.unblockSettings();
         RootAppPage.skipTour();
         RootAppPage.clickOnSetttings();
+        SettingsAppPage.skipTour();
         SettingsAppPage.clickOnLanguage();
         this.pageH6.waitForDisplayed(4000);
     }

@@ -38,6 +38,9 @@ class SettingsAppPage extends BasePage {
     get exportFormatMenu() {
         return $('//ul[@role="menu"]');
     }
+    get closeTourButton() {
+      return $('span=Close Tour');
+    }
 
     /**
      * define or overwrite page methods
@@ -88,6 +91,11 @@ class SettingsAppPage extends BasePage {
     isDisplayed() {
         return this.pageH6.isDisplayed();
     }
+
+    skipTour() {
+      this.closeTourButton.click();
+    }
+  
 }
 
 export default new SettingsAppPage();
