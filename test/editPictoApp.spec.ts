@@ -5,7 +5,7 @@ import WelcomeAppPage from 'src/pages/WelcomeAppPage';
 
 describe('Edit pictograms page', function () {
   beforeEach(function () {
-    //browser.reloadSession();
+    browser.reloadSession();
     RootAppPage.open();
     RootAppPage.unblockSettings();
   });

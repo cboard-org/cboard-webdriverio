@@ -4,16 +4,16 @@ import randomstring from 'randomstring';
 import CreatePictoAppPage from 'src/pages/CreatePictoAppPage';
 import RootAppPage from 'src/pages/RootAppPage';
 
-describe('Create pictograms page', function () {
-  beforeEach(function () {
-    //browser.reloadSession();
+describe('Create pictograms page', function() {
+    beforeEach(function () {
+        browser.reloadSession();
     CreatePictoAppPage.open();
   });
 
-  afterEach(function () {
+  afterEach(function() {
   });
 
-  it('should create a new pictogram and display it in the current board', function () {
+  it('should create a new pictogram and display it in the current board', function() {
     var newLabel = randomstring.generate({
       length: 8,
       charset: 'alphabetic'
@@ -22,7 +22,7 @@ describe('Create pictograms page', function () {
     expect(RootAppPage.isTileDisplayed(newLabel)).to.be.true;
   });
 
-  it('should create a new folder and display it in the current board', function () {
+  it('should create a new folder and display it in the current board', function() {
     var newLabel = randomstring.generate({
       length: 8,
       charset: 'alphabetic'
