@@ -44,6 +44,9 @@ class WelcomeAppPage extends BasePage {
     get loginErrorMessage() {
         return $('div.Login__status.Login__status--error');
     }
+    get termsInput() {
+        return $('//*[@name="isTermsAccepted"]');
+    }
 
     /**
      * define or overwrite page methods
@@ -91,6 +94,7 @@ class WelcomeAppPage extends BasePage {
         this.usernameInput.setValue(username);
         this.passwordInput.setValue(password);
         this.passwordConfirmInput.setValue(password);
+        this.termsInput.click();
         browser.pause(500);
         //Record the start time for the timestamp_from filter
         const startTimestamp = Date.now();
