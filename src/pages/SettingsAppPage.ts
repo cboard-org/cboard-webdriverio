@@ -39,7 +39,7 @@ class SettingsAppPage extends BasePage {
         return $('//ul[@role="menu"]');
     }
     get closeTourButton() {
-      return $('span=Close Tour');
+      return $('=Close Tour');
     }
 
     /**
