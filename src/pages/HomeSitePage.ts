@@ -5,7 +5,7 @@ class HomePage extends BasePage {
    * define elements
    **/
   get startCboard() {
-    return browser.$('=START CBOARD');
+    return browser.$('//a[href="https://app.cboard.io"');
   }
   get blog() {
     return browser.$('=BLOG');
