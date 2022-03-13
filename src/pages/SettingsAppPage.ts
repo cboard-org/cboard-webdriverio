@@ -50,6 +50,7 @@ class SettingsAppPage extends BasePage {
         WelcomeAppPage.loginUser();
         RootAppPage.unblockSettings();
         RootAppPage.clickOnSetttings();
+        this.skipTour();
         this.pageH6.waitForDisplayed(4000);
         browser.waitUntil(() => !RootAppPage.isContentCatchMessageDisplayed());
     }

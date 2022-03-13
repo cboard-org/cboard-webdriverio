@@ -2,7 +2,7 @@ import SettingsPage from 'src/pages/SettingsAppPage';
 import RootAppPage from 'src/pages/RootAppPage';
 import SettingsAppPage from 'src/pages/SettingsAppPage';
 
-describe('Language option', function () {
+describe('Settings options', function () {
     beforeEach(function () {
         browser.reloadSession();
         SettingsAppPage.open();
@@ -15,90 +15,25 @@ describe('Language option', function () {
         SettingsPage.clickOnLanguage();
         //SettingsPage.exportBoard();
     });
-});
-
-describe('Speech option', function () {
-    beforeEach(function () {
-        browser.reloadSession();
-        SettingsAppPage.open();
-    });
-
-    afterEach(function () {
-    });
-
     it('should display available speech settings', function () {
         SettingsPage.clickOnSpeech();
         //SettingsPage.exportBoard();
     });
-});
-
-describe('Import board option', function () {
-    beforeEach(function () {
-        browser.reloadSession();
-        SettingsAppPage.open();
-    });
-
-    afterEach(function () {
-    });
     it('should import and immediately display the board', function () {
         SettingsAppPage.clickOnImport();
     });
-});
-
-describe('Export board option', function () {
-    beforeEach(function () {
-        browser.reloadSession();
-        SettingsAppPage.open();
-    });
-
-    afterEach(function () {
-    });
-
     it('should download the root board as a cboard json file', function () {
         SettingsPage.clickOnExport();
         //SettingsPage.exportBoard();
     });
-});
-
-describe('Display option', function () {
-    beforeEach(function () {
-        browser.reloadSession();
-        SettingsAppPage.open();
-    });
-
-    afterEach(function () {
-    });
-
     it('should list the display options ', function () {
         SettingsPage.clickOnDisplay();
         //SettingsPage.exportBoard();
     });
-});
-
-describe('Scanning option', function () {
-    beforeEach(function () {
-        browser.reloadSession();
-        SettingsAppPage.open();
-    });
-
-    afterEach(function () {
-    });
-
     it('should display the scanning options', function () {
         SettingsPage.clickOnScanning();
         //SettingsPage.exportBoard();
     });
-});
-
-describe('Navigation option', function () {
-    beforeEach(function () {
-        browser.reloadSession();
-        SettingsAppPage.open();
-    });
-
-    afterEach(function () {
-    });
-
     it('should display the Navigation options', function () {
         SettingsPage.clickOnNavigation();
         //SettingsPage.exportBoard();
