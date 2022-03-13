@@ -77,4 +77,8 @@ describe('Root board page', function () {
     it('should not display analytics when settings are blocked', function () {
         expect(RootAppPage.isAnalyticsButtonDisplayed()).to.be.false;
     });
+
+    it('should display caching images message on start up', function () {
+        expect(RootAppPage.isCachingImagesMsgDisplayed()).to.be.true;
+    });
 });

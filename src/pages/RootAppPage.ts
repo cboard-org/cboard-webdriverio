@@ -298,5 +298,15 @@ class RootAppPage extends BasePage {
     this.closeTourButton.click();
   }
 
+  async isCachingImagesMsgDisplayed() {
+    const el = await this.contentCachedMessage();
+    try {
+      await el.waitForDisplayed(12000);
+      return true;
+    } catch (err) {
+      return false;
+    }
+  }
+
 }
 export default new RootAppPage();
