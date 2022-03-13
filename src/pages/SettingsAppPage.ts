@@ -94,7 +94,9 @@ class SettingsAppPage extends BasePage {
     }
 
     skipTour() {
-      this.closeTourButton.click();
+        if (this.closeTourButton.isDisplayed()){
+            this.closeTourButton.click();
+        }
     }
   
 }
