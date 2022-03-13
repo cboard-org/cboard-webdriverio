@@ -41,6 +41,12 @@ class SettingsAppPage extends BasePage {
     get closeTourButton() {
         return $('//*[contains(.,"Close Tour")]');
     }
+    get languagesList() {
+        return $('ul.MuiList-root');
+    }
+    get languageEl() {
+        return $$('ul div.MuiButtonBase-root');
+    }
 
     /**
      * define or overwrite page methods
@@ -94,11 +100,26 @@ class SettingsAppPage extends BasePage {
     }
 
     skipTour() {
-        if (this.closeTourButton.isDisplayed()){
+        browser.pause(2000);
+        if (this.closeTourButton.isDisplayed()) {
             this.closeTourButton.click();
         }
+        browser.pause(2000);
+        if (this.closeTourButton.isDisplayed()) {
+            this.closeTourButton.click();
+        }
+        browser.pause(2000);
     }
-  
+    async getLanguagesList() {
+        const list = await this.languagesList;
+        const elems = await list.(this.language);
+        const langs: string[] = [];
+        for (var i = 0; i < elems.length; i++) {
+            langs.push(elems[i].$('div div span').getText());
+        }
+        return langs;
+    }
+
 }
 
 export default new SettingsAppPage();

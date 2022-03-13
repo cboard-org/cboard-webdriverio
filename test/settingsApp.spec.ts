@@ -1,4 +1,5 @@
-import SettingsPage from 'src/pages/SettingsAppPage';
+import { expect } from 'chai';
+
 import RootAppPage from 'src/pages/RootAppPage';
 import SettingsAppPage from 'src/pages/SettingsAppPage';
 
@@ -11,31 +12,32 @@ describe('Settings options', function () {
     afterEach(function () {
     });
 
-    it('should display available languages list', function () {
-        SettingsPage.clickOnLanguage();
-        //SettingsPage.exportBoard();
+    it('should display available languages list', async function () {
+        SettingsAppPage.clickOnLanguage();
+        const langs = await SettingsAppPage.getLanguagesList();
+        expect(langs.length).to.be.above(1);
     });
     it('should display available speech settings', function () {
-        SettingsPage.clickOnSpeech();
-        //SettingsPage.exportBoard();
+        SettingsAppPage.clickOnSpeech();
+        //SettingsAppPage.exportBoard();
     });
     it('should import and immediately display the board', function () {
         SettingsAppPage.clickOnImport();
     });
     it('should download the root board as a cboard json file', function () {
-        SettingsPage.clickOnExport();
-        //SettingsPage.exportBoard();
+        SettingsAppPage.clickOnExport();
+        //SettingsAppPage.exportBoard();
     });
     it('should list the display options ', function () {
-        SettingsPage.clickOnDisplay();
-        //SettingsPage.exportBoard();
+        SettingsAppPage.clickOnDisplay();
+        //SettingsAppPage.exportBoard();
     });
     it('should display the scanning options', function () {
-        SettingsPage.clickOnScanning();
-        //SettingsPage.exportBoard();
+        SettingsAppPage.clickOnScanning();
+        //SettingsAppPage.exportBoard();
     });
     it('should display the Navigation options', function () {
-        SettingsPage.clickOnNavigation();
-        //SettingsPage.exportBoard();
+        SettingsAppPage.clickOnNavigation();
+        //SettingsAppPage.exportBoard();
     });
 });
