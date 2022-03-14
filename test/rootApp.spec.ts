@@ -78,7 +78,7 @@ describe('Root board page', function () {
         expect(RootAppPage.isAnalyticsButtonDisplayed()).to.be.false;
     });
 
-    it('should display caching images message on start up', function () {
-        expect(RootAppPage.isCachingImagesMsgDisplayed()).to.be.true;
+    it('should display caching images message on start up', async function () {
+        expect(await RootAppPage.isCachingImagesMsgDisplayed()).to.be.true;
     });
 });
