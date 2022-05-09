@@ -18,7 +18,7 @@ jobs:
           - yarn-packages-v1-{{ .Branch }}-
           - yarn-packages-v1-
     # Install and save node_modules to cache
-    - run: yarn install --cache-folder ~/.cache/yarn
+    - run: yarn install  --ignore-engines --ignore-platform --cache-folder ~/.cache/yarn
     - save_cache:
         paths:
           - ~/.cache/yarn
