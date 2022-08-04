@@ -35,5 +35,5 @@ workflows:
       - run_tests:
           context: qa-users
           filters:
-            branches:
-              only: master
+            # branches:
+            #   only: master
