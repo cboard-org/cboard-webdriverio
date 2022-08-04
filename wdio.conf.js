@@ -20,40 +20,52 @@ exports.config = {
     maxInstancesPerCapability: 3,
 
     capabilities: [{
+    //     browserName: 'chrome',
+    //     'bstack:options': {
+    //         projectName: 'cboard',
+    //         buildName: 'chrome web - ' + process.env.CIRCLE_BUILD_NUM
+    //     }
+    // },
+    // {
+    //     browserName: 'chrome',
+    //     'bstack:options': {
+    //         projectName: 'cboard',
+    //         osVersion: '10.0',
+    //         deviceName: 'Samsung Galaxy Note 20',
+    //         realMobile: 'true',
+    //         buildName: 'android web - ' + process.env.CIRCLE_BUILD_NUM,
+    //     }
+    // },
+    // {
+    //     browserName: "Safari",
+    //     'bstack:options': {
+    //         os: "OS X",
+    //         osVersion: "Big Sur",
+    //         browserVersion: "14.0",
+    //         projectName: 'cboard',
+    //         buildName: 'safari web - ' + process.env.CIRCLE_BUILD_NUM
+    //     }
+    // }, {
+    //     browserName: "iPhone",
+    //     'bstack:options': {
+    //         osVersion: "14",
+    //         deviceName: "iPhone 11",
+    //         realMobile: 'true',
+    //         buildName: 'ios web - ' + process.env.CIRCLE_BUILD_NUM,
+    //         projectName: 'cboard',
+    //     }
+    // },{
         browserName: 'chrome',
+        specs: ['./test/localTest.spec.ts','./test/peopleApp.spec.ts'],
         'bstack:options': {
             projectName: 'cboard',
-            buildName: 'chrome web - ' + process.env.CIRCLE_BUILD_NUM
-        }
-    },
-    {
-        browserName: 'chrome',
-        'bstack:options': {
-            projectName: 'cboard',
-            osVersion: '10.0',
-            deviceName: 'Samsung Galaxy Note 20',
-            realMobile: 'true',
-            buildName: 'android web - ' + process.env.CIRCLE_BUILD_NUM,
-        }
-    },
-    {
-        browserName: "Safari",
-        'bstack:options': {
-            os: "OS X",
-            osVersion: "Big Sur",
-            browserVersion: "14.0",
-            projectName: 'cboard',
-            buildName: 'safari web - ' + process.env.CIRCLE_BUILD_NUM
-        }
-    }, {
-        browserName: "iPhone",
-        'bstack:options': {
-            osVersion: "14",
-            deviceName: "iPhone 11",
-            realMobile: 'true',
-            buildName: 'ios web - ' + process.env.CIRCLE_BUILD_NUM,
-            projectName: 'cboard',
-        }
+            buildName: 'Chrome web Argentina - ' + process.env.CIRCLE_BUILD_NUM,
+        },
+        // proxy: {
+        //     proxyType: "manual",
+        //     httpProxy: "45.140.13.119:9132",
+        //     socksProxy: 'socks5://pkmspndb:53nbkwk3gyd4@45.140.13.119:9132'
+        // }
     }
     ],
 
@@ -85,7 +97,15 @@ exports.config = {
     connectionRetryCount: 3,
 
     host: 'hub.browserstack.com',
-    services: [["browserstack", {}]],
+    services: [["browserstack", {
+        browserstackLocal: true,
+        opts : {
+            localProxyHost: "45.140.13.119",
+            localProxyPort: "9132",
+            localProxyUser: "pkmspndb",
+            localProxyPass: "53nbkwk3gyd4",
+          }   
+    }]],
     framework: 'mocha',
 
     reporters: [

@@ -11,6 +11,9 @@ class SettingsAppPage extends BasePage {
     get pageH6() {
         return $('h6=Settings');
     }
+    get people() {
+        return $('//a[@href="/settings/people"]');
+    }
     get language() {
         return $('//a[@href="/settings/language"]');
     }
@@ -39,7 +42,7 @@ class SettingsAppPage extends BasePage {
         return $('//ul[@role="menu"]');
     }
     get closeTourButton() {
-        return $('//*[contains(.,"Close Tour")]');
+        return $('//button[@aria-label="Close Tour"]');
     }
     get languagesList() {
         return $('ul.MuiList-root');
@@ -63,6 +66,10 @@ class SettingsAppPage extends BasePage {
 
     reload() {
         super.reload();
+    }
+
+    clickOnPeople() {
+        return this.people.click();
     }
 
     clickOnLanguage() {
