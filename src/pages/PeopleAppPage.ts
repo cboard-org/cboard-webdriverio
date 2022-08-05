@@ -36,7 +36,12 @@ class PeopleAppPage extends BasePage {
    */
   open() {
     browser.url('/');
-    WelcomeAppPage.loginUser();
+    WelcomeAppPage.loginSkip();
+    RootAppPage.skipTour();
+    RootAppPage.unblockSettings();
+    RootAppPage.skipTour();
+    RootAppPage.loginOrSignUp();
+    this.pageH6.waitForDisplayed(4000);
   }
 
 }
