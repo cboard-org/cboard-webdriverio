@@ -36,7 +36,7 @@ class PeopleAppPage extends BasePage {
    */
   open() {
     browser.url('/');
-    WelcomeAppPage.loginUser();
+    WelcomeAppPage.loginSkip();
   }
 
 }
