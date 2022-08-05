@@ -20,12 +20,13 @@ exports.config = {
     maxInstancesPerCapability: 3,
 
     capabilities: [{
-    //     browserName: 'chrome',
-    //     'bstack:options': {
-    //         projectName: 'cboard',
-    //         buildName: 'chrome web - ' + process.env.CIRCLE_BUILD_NUM
-    //     }
-    // },
+        browserName: 'chrome',
+        specs: ['./test/peopleApp.spec.ts'],
+        'bstack:options': {
+            projectName: 'cboard',
+            buildName: 'chrome web - ' + process.env.CIRCLE_BUILD_NUM
+        }
+    },
     // {
     //     browserName: 'chrome',
     //     'bstack:options': {
@@ -55,18 +56,11 @@ exports.config = {
     //         projectName: 'cboard',
     //     }
     // },{
-        browserName: 'chrome',
-        specs: ['./test/peopleApp.spec.ts'],
-        'bstack:options': {
-            projectName: 'cboard',
-            buildName: 'Chrome web Argentina - ' + process.env.CIRCLE_BUILD_NUM,
-        },
         // proxy: {
         //     proxyType: "manual",
         //     httpProxy: "45.140.13.119:9132",
         //     socksProxy: 'socks5://pkmspndb:53nbkwk3gyd4@45.140.13.119:9132'
         // }
-    }
     ],
 
     // Level of logging verbosity: trace | debug | info | warn | error
@@ -97,15 +91,15 @@ exports.config = {
     connectionRetryCount: 3,
 
     host: 'hub.browserstack.com',
-    services: [["browserstack", {
-        browserstackLocal: true,
-        opts : {
-            localProxyHost: "45.140.13.119",
-            localProxyPort: "9132",
-            localProxyUser: "pkmspndb",
-            localProxyPass: "53nbkwk3gyd4",
-          }   
-    }]],
+    services: [["browserstack",  {}]],
+    //     browserstackLocal: true,
+    //     opts : {
+    //         localProxyHost: "45.140.13.119",
+    //         localProxyPort: "9132",
+    //         localProxyUser: "pkmspndb",
+    //         localProxyPass: "53nbkwk3gyd4",
+    //       }   
+    // }]],
     framework: 'mocha',
 
     reporters: [
