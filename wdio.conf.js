@@ -56,7 +56,7 @@ exports.config = {
     //     }
     // },{
         browserName: 'chrome',
-        specs: ['./test/localTest.spec.ts','./test/peopleApp.spec.ts'],
+        specs: ['./test/peopleApp.spec.ts'],
         'bstack:options': {
             projectName: 'cboard',
             buildName: 'Chrome web Argentina - ' + process.env.CIRCLE_BUILD_NUM,
