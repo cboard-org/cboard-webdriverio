@@ -56,6 +56,10 @@ class PeoplePage extends BasePage {
     RootAppPage.loginOrSignUp();
     this.pageH6.waitForDisplayed(4000);
   }
+  
+  reload() {
+      super.reload();
+  }
 
   async getCountryCode() {
     return await this.countryCode.getAttribute('country-code');
