@@ -1,10 +1,11 @@
 import { assert } from 'chai';
 import { expect } from 'chai';
-var rn = require('random-number');
 
 import BasePage from 'src/pages/BasePage';
 import WelcomeAppPage from 'src/pages/WelcomeAppPage';
 import CreatePictoAppPage from 'src/pages/CreatePictoAppPage';
+import RootAppPage from 'src/pages/RootAppPage';
+import SettingsAppPage from 'src/pages/SettingsAppPage';
 
 class PeopleAppPage extends BasePage {
   /**
