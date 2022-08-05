@@ -1,14 +1,13 @@
 import { expect } from 'chai';
 
-import PeoplePage from 'src/pages/PeoplePage';
+import PeopleAppPage from 'src/pages/PeopleAppPage';
 import RootAppPage from 'src/pages/RootAppPage';
 
 
 describe('People page', function () {
     beforeEach(function () {
         browser.reloadSession();
-        RootAppPage.open();
-        PeoplePage.openFromRootPage();
+        PeopleAppPage.open();
     });
 
     afterEach(function () {
