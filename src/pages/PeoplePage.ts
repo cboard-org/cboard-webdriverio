@@ -36,7 +36,7 @@ class PeoplePage extends BasePage {
    * define or overwrite page methods
    */
   openFromSettings() {
-    browser.url('/');
+    //browser.url('/');
     WelcomeAppPage.loginSkip();
     RootAppPage.skipTour();
     RootAppPage.unblockSettings();
@@ -48,7 +48,7 @@ class PeoplePage extends BasePage {
   }
 
   openFromRootPage() {
-    browser.url('/');
+    //browser.url('/');
     WelcomeAppPage.loginSkip();
     RootAppPage.skipTour();
     RootAppPage.unblockSettings();
@@ -56,7 +56,7 @@ class PeoplePage extends BasePage {
     RootAppPage.loginOrSignUp();
     this.pageH6.waitForDisplayed(4000);
   }
-  
+
   reload() {
       super.reload();
   }

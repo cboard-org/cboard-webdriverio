@@ -8,6 +8,7 @@ describe('People page', function () {
     beforeEach(function () {
         browser.reloadSession();
         RootAppPage.open();
+        PeoplePage.openFromRootPage();
     });
 
     afterEach(function () {
