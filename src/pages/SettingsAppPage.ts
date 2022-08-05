@@ -107,15 +107,15 @@ class SettingsAppPage extends BasePage {
     }
 
     skipTour() {
-        browser.pause(2000);
+        //browser.pause(2000);
         if (this.closeTourButton.isDisplayed()) {
             this.closeTourButton.click();
         }
-        browser.pause(2000);
+        //browser.pause(2000);
         if (this.closeTourButton.isDisplayed()) {
             this.closeTourButton.click();
         }
-        browser.pause(2000);
+       // browser.pause(2000);
     }
     async getLanguagesList() {
         const list = await this.languagesList;

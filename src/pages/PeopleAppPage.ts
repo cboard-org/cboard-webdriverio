@@ -41,6 +41,7 @@ class PeopleAppPage extends BasePage {
     RootAppPage.unblockSettings();
     RootAppPage.skipTour();
     RootAppPage.clickOnSetttings();
+    SettingsAppPage.skipTour();
   }
 
 }
