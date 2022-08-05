@@ -41,7 +41,10 @@ class PeopleAppPage extends BasePage {
     RootAppPage.unblockSettings();
     RootAppPage.skipTour();
     RootAppPage.clickOnSetttings();
-    SettingsAppPage.skipTour();
+    browser.pause(2000);
+    if ( $('//button[@aria-label="Close Tour"]').isDisplayed()) {
+      $('//button[@aria-label="Close Tour"]').click();
+    }
   }
 
 }
