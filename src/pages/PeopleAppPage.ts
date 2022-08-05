@@ -45,6 +45,8 @@ class PeopleAppPage extends BasePage {
     if ( $('//button[@aria-label="Close Tour"]').isDisplayed()) {
       $('//button[@aria-label="Close Tour"]').click();
     }
+    $('//a[@href="/settings/people"]').click();
+    this.pageH6.waitForDisplayed(6000);
   }
 
 }
