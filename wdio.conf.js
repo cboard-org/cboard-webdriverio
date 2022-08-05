@@ -21,7 +21,7 @@ exports.config = {
 
     capabilities: [{
         browserName: 'chrome',
-        specs: ['./test/rootApp.spec.ts'],
+        specs: ['./test/peopleApp.spec.ts'],
         'bstack:options': {
             projectName: 'cboard',
             buildName: 'chrome web - ' + process.env.CIRCLE_BUILD_NUM
