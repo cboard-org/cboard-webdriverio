@@ -5,7 +5,7 @@ import PeoplePage from 'src/pages/PeoplePage';
 describe('People page', function () {
     beforeEach(function () {
        // browser.reloadSession();
-        PeoplePage.openFromSettings();
+       // PeoplePage.openFromSettings();
     });
 
     afterEach(function () {
