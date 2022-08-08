@@ -1,5 +1,7 @@
 import { assert } from 'chai';
 import { expect } from 'chai';
+var requests = require('requests');
+
 
 import BasePage from 'src/pages/BasePage';
 import WelcomeAppPage from 'src/pages/WelcomeAppPage';
@@ -10,7 +12,7 @@ class PeopleAppPage extends BasePage {
   /**
    * define elements
    */
-   get pageH6() {
+  get pageH6() {
     return $('h6=People');
   }
   get saveButtton() {
@@ -42,11 +44,25 @@ class PeopleAppPage extends BasePage {
     RootAppPage.skipTour();
     RootAppPage.clickOnSetttings();
     browser.pause(2000);
-    if ( $('//button[@aria-label="Close Tour"]').isDisplayed()) {
+    if ($('//button[@aria-label="Close Tour"]').isDisplayed()) {
       $('//button[@aria-label="Close Tour"]').click();
     }
     $('//a[@href="/settings/people"]').click();
     this.pageH6.waitForDisplayed(6000);
+  }
+
+  async getCountryCode() {
+    return await this.countryCode.getAttribute('country-code');
+  }
+
+
+  getUserLocation() {
+    return this.userLocation.getText();
+  }
+
+  async setProxyCountry() {
+
+  requests.get("https://proxy.webshare.io/api/profile/", headers={"Authorization": "Token 024a08ff927d4b8cb444a0cbbecfa132aec6ce40"})
   }
 
 }

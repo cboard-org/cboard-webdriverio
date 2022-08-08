@@ -4,8 +4,9 @@ import PeopleAppPage from 'src/pages/PeopleAppPage';
 import RootAppPage from 'src/pages/RootAppPage';
 
 
-describe('People page', function () {
+describe('People page for unregistered user ', function () {
     beforeEach(function () {
+        PeopleAppPage.setProxyCountry();
         browser.reloadSession();
         PeopleAppPage.open();
     });
@@ -13,10 +14,8 @@ describe('People page', function () {
     afterEach(function () {
     });
 
-    it('should comprobe the unlogged user location', function () {
-        // const countryCode = await PeoplePage.getCountryCode();
-        // expect(countryCode).to.be.equal(browser.capabilities.browserstack.geoLocation);
-        expect("Hola").to.be.equal("Hola")
+    it('should contains valid information for location ', function () {
+        expect(PeopleAppPage.getUserLocation()).to.be.equal("United States")
     });
 });
 
