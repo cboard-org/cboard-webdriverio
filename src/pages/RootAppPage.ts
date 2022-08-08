@@ -31,6 +31,9 @@ class RootAppPage extends BasePage {
   get tileFolder() {
     return $$('//button[@class="Tile Tile--folder"]');
   }
+  get loginOrSignUp() {
+    return $('//*[@aria-label="Login or Sign up"]');
+  }
   get settings() {
     return $('//*[@aria-label="Settings"]');
   }
@@ -265,6 +268,10 @@ class RootAppPage extends BasePage {
 
   clickOnSetttings() {
     return this.settings.click();
+  }
+
+  clickOnLoginOrSingUp() {
+    return this.loginOrSignUp.click();
   }
 
   isContentCatchMessageDisplayed() {

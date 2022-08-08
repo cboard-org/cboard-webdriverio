@@ -13,7 +13,7 @@
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.0.12",
-    "@wdio/browserstack-service": "^7.8.0",
+    "@wdio/browserstack-service": "^7.20.9",
     "@wdio/cli": "^7.8.0",
     "@wdio/concise-reporter": "^7.8.0",
     "@wdio/dot-reporter": "^7.8.0",
