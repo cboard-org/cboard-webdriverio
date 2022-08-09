@@ -57,7 +57,7 @@ class PeopleAppPage extends BasePage {
 
 
   getUserLocation() {
-    return this.userLocation.getText();
+    return this.userLocation.getValue();
   }
 
   async setProxyCountry() {
