@@ -119,7 +119,6 @@ class SettingsAppPage extends BasePage {
         }
         return langs;
     }
-
 }
 
 export default new SettingsAppPage();
