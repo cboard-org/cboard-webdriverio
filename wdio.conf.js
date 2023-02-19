@@ -23,6 +23,7 @@ exports.config = {
         browserName: 'chrome',
         'bstack:options': {
             projectName: 'cboard',
+            os: 'Windows',
             buildName: 'chrome web - ' + process.env.CIRCLE_BUILD_NUM
         }
     },
