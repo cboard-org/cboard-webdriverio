@@ -111,8 +111,7 @@ class SettingsAppPage extends BasePage {
         browser.pause(2000);
     }
     async getLanguagesList() {
-        const list = await this.languagesList;
-        const elems = await list.(this.language);
+        const elems = await this.language;
         const langs: string[] = [];
         for (var i = 0; i < elems.length; i++) {
             langs.push(elems[i].$('div div span').getText());
