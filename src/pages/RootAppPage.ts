@@ -89,7 +89,7 @@ class RootAppPage extends BasePage {
     return $('//h6//span[contains(.,"Analytics")]');
   }
   get cboardAnalyticsCardValues() {
-    return $$('.StatCards__Card__Items__Text__Value');
+    return $$('.StatCards2__Card__Value');
   }
   get closeTourButton() {
     return $('span=Close Tour');
