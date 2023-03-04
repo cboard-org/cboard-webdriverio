@@ -54,6 +54,7 @@ class SettingsAppPage extends BasePage {
     open() {
         browser.url('/');
         WelcomeAppPage.loginSkip();
+        RootAppPage.skipTour();
         RootAppPage.unblockSettings();
         RootAppPage.clickOnSetttings();
         this.skipTour();
