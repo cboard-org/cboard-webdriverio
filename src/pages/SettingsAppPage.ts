@@ -39,7 +39,7 @@ class SettingsAppPage extends BasePage {
         return $('//ul[@role="menu"]');
     }
     get closeTourButton() {
-        return $('//*[contains(.,"Close Tour")]');
+        return $('//button[contains(.,"Close Tour")]');
     }
     get languagesList() {
         return $('ul.MuiList-root');
