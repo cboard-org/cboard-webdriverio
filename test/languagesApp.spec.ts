@@ -36,8 +36,5 @@ describe('Languages functionality', function () {
         SettingsPage.clickOnLanguage();
         LanguagesAppPage.clickOnLanguage('Espagnol');
         LanguagesAppPage.clickOnSave();
-        SettingsPage.clickOnLanguage();
-        LanguagesAppPage.clickOnLanguage('Francés');
-        LanguagesAppPage.clickOnSave();
     });
 });
