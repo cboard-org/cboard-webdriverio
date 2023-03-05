@@ -24,15 +24,18 @@ describe('Languages functionality', function () {
     it('should change to english language', function () {
         LanguagesAppPage.clickOnLanguage('Spanish');
         LanguagesAppPage.clickOnSave();
+        browser.pause(2000);
         SettingsPage.clickOnLanguage();
         LanguagesAppPage.clickOnLanguage('Inglés');
         LanguagesAppPage.clickOnSave();
+        browser.pause(2000);
         SettingsPage.clickOnLanguage();
         LanguagesAppPage.clickOnLanguage('English');
     });
     it('should change to french language', function () {
         LanguagesAppPage.clickOnLanguage('French');
         LanguagesAppPage.clickOnSave();
+        browser.pause(2000);
         SettingsPage.clickOnLanguage();
         LanguagesAppPage.clickOnLanguage('Espagnol');
         LanguagesAppPage.clickOnSave();
