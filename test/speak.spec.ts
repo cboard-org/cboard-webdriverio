@@ -25,6 +25,7 @@ describe('App can speak and', function () {
     });
     it('should sound when output bar is clicked', function () {
         expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.false;
+        RootAppPage.clickOnRandomTileButton();
         RootAppPage.clickSymbolOutput();
         expect(RootAppPage.isSpeaking(), 'Speaking detected').to.be.true;
         //browser.waitUntil(() => RootAppPage.isSpeaking() === false, 10000);
