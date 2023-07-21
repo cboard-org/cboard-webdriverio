@@ -2,6 +2,7 @@ import { expect } from 'chai';
 
 import RootAppPage from 'src/pages/RootAppPage';
 import SettingsAppPage from 'src/pages/SettingsAppPage';
+import SymbolsPage from 'src/pages/SymbolsPage';
 
 describe('Settings options', function () {
     beforeEach(function () {
@@ -39,5 +40,9 @@ describe('Settings options', function () {
     it('should display the Navigation options', function () {
         SettingsAppPage.clickOnNavigation();
         //SettingsAppPage.exportBoard();
+    });
+    it('should display the Symbols options', function () {
+        SettingsAppPage.clickOnSymbols();
+        expect(SymbolsPage.isDisplayed()).to.be.true
     });
 });

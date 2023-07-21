@@ -32,6 +32,9 @@ class SettingsAppPage extends BasePage {
     get navigation() {
         return $('//a[@href="/settings/navigation"]');
     }
+    get symbols() {
+        return $('//a[@href="/settings/symbols"]');
+    }
     get exportButton() {
         return $('#export-button');
     }
@@ -89,6 +92,9 @@ class SettingsAppPage extends BasePage {
     }
     clickOnScanning() {
         return this.scanning.click();
+    }
+    clickOnSymbols() {
+        return this.symbols.click();
     }
 
     exportBoard(format = 'Cboard') {
