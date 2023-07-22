@@ -108,14 +108,8 @@ class SettingsAppPage extends BasePage {
 
     skipTour() {
         browser.pause(2000);
-        if (this.closeTourButton.isDisplayed()) {
-            this.closeTourButton.click();
-        }
-        browser.pause(2000);
-        if (this.closeTourButton.isDisplayed()) {
-            this.closeTourButton.click();
-        }
-        browser.pause(2000);
+        this.closeTourButton.waitForDisplayed(6000)
+        this.closeTourButton.click();
     }
     async getLanguagesList() {
         const elems = await this.language;

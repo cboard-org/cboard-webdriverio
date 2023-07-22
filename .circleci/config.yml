@@ -40,4 +40,4 @@ workflows:
           context: qa-users
           filters:
             branches:
-              only: master
+              only: gmaster
