@@ -59,6 +59,7 @@ class SettingsAppPage extends BasePage {
         WelcomeAppPage.loginSkip();
         RootAppPage.skipTour();
         RootAppPage.unblockSettings();
+        RootAppPage.skipTour();
         RootAppPage.clickOnSetttings();
         this.skipTour();
         this.pageH6.waitForDisplayed(4000);
