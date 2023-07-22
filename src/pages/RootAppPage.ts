@@ -294,8 +294,8 @@ class RootAppPage extends BasePage {
     return this.cboardAnalyticsCardValues.map(val => val.getText());
   }
 
-  skipTour() {
-    this.closeTourButton.click();
+  async skipTour() {
+    await this.closeTourButton.click();
   }
 
   async isCachingImagesMsgDisplayed() {
