@@ -6,7 +6,7 @@ version: 2.1
 parameters:
   testname:
     type: string
-    default: "all"
+    default: ""
 jobs:
   run_tests:
     docker:
@@ -28,7 +28,7 @@ jobs:
           - ~/.cache/yarn
         key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
     # run tests!
-    - run: yarn test -- --spec << pipeline.parameters.testname >>
+    - run: yarn test --spec << pipeline.parameters.testname >>
     - store_test_results:
         path: test-results
 
