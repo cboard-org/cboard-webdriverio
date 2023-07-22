@@ -63,7 +63,6 @@ class SettingsAppPage extends BasePage {
         RootAppPage.clickOnSetttings();
         this.skipTour();
         this.pageH6.waitForDisplayed(4000);
-        browser.waitUntil(() => !RootAppPage.isContentCatchMessageDisplayed());
     }
 
     reload() {
