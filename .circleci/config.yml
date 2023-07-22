@@ -3,6 +3,10 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+parameters:
+  testname:
+    type: string
+    default: "all"
 jobs:
   run_tests:
     docker:
@@ -24,7 +28,7 @@ jobs:
           - ~/.cache/yarn
         key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
     # run tests!
-    - run: yarn test
+    - run: yarn test -- --spec << pipeline.parameters.testname >>
     - store_test_results:
         path: test-results
 
