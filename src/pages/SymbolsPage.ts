@@ -58,7 +58,7 @@ class SymbolsPage extends BasePage {
     }
 
     isDisplayed() {
-        return this.pageH6.isDisplayed();
+        return this.pageH6.waitForDisplayed(6000);
     }
 
     progressbarIsDisplayed() {
