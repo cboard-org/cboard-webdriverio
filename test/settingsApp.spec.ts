@@ -14,7 +14,7 @@ describe('Settings options', function () {
     });
 
     it('should display available languages list', async function () {
-        SettingsAppPage.clickOnLanguage();
+        await SettingsAppPage.clickOnLanguage();
         const langs = await SettingsAppPage.getLanguagesList();
         expect(langs.length).to.be.above(1);
     });

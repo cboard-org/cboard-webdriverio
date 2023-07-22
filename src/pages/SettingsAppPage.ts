@@ -69,8 +69,8 @@ class SettingsAppPage extends BasePage {
         super.reload();
     }
 
-    clickOnLanguage() {
-        return this.language.click();
+    async clickOnLanguage() {
+        return await this.language.click();
     }
 
     clickOnSpeech() {
