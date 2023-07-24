@@ -15,6 +15,7 @@ describe('Symbols features', function () {
     });
 
     it('should display the progress bar on download', function () {
+        expect(SymbolsPage.progressbarIsDisplayed()).to.be.false;
         SymbolsPage.clickOnDownload();
         SymbolsPage.clickOnDownloadDialog();
         expect(SymbolsPage.progressbarIsDisplayed()).to.be.true;
