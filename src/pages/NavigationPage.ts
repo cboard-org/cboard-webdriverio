@@ -10,7 +10,7 @@ class NavigationPage extends BasePage {
      * define elements
      */
     get pageH6() {
-        return $('h6=Navigation');
+        return $('h6="Navigation and Buttons"');
     }
 
     /**
