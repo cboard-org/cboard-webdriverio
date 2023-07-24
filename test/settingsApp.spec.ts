@@ -1,8 +1,12 @@
 import { expect } from 'chai';
-
-import RootAppPage from 'src/pages/RootAppPage';
+import DisplayPage from 'src/pages/DisplayPage';
+import SpeechPage from 'src/pages/SpeechPage';
 import SettingsAppPage from 'src/pages/SettingsAppPage';
 import SymbolsPage from 'src/pages/SymbolsPage';
+import ScanningPage from 'src/pages/ScanningPage';
+import ImportPage from 'src/pages/ImportPage';
+import ExportPage from 'src/pages/ExportPage';
+import NavigationPage from 'src/pages/NavigationPage';
 
 describe('Settings options', function () {
     beforeEach(function () {
@@ -21,26 +25,27 @@ describe('Settings options', function () {
     });
     it('should display available speech settings', function () {
         SettingsAppPage.clickOnSpeech();
-        //SettingsAppPage.exportBoard();
+        expect(SpeechPage.isDisplayed()).to.be.true
     });
-    it('should import and immediately display the board', function () {
+    it('should display available import options', function () {
         SettingsAppPage.clickOnImport();
+        expect(ImportPage.isDisplayed()).to.be.true
     });
-    it('should download the root board as a cboard json file', function () {
+    it('should display available export options', function () {
         SettingsAppPage.clickOnExport();
-        //SettingsAppPage.exportBoard();
+        expect(ExportPage.isDisplayed()).to.be.true
     });
     it('should list the display options ', function () {
         SettingsAppPage.clickOnDisplay();
-        //SettingsAppPage.exportBoard();
+        expect(DisplayPage.isDisplayed()).to.be.true
     });
     it('should display the scanning options', function () {
         SettingsAppPage.clickOnScanning();
-        //SettingsAppPage.exportBoard();
+        expect(ScanningPage.isDisplayed()).to.be.true
     });
     it('should display the Navigation options', function () {
         SettingsAppPage.clickOnNavigation();
-        //SettingsAppPage.exportBoard();
+        expect(NavigationPage.isDisplayed()).to.be.true
     });
     it('should display the Symbols options', function () {
         SettingsAppPage.clickOnSymbols();

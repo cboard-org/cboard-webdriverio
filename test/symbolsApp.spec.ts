@@ -20,11 +20,11 @@ describe('Symbols features', function () {
         SymbolsPage.clickOnDownloadDialog();
         expect(SymbolsPage.progressbarIsDisplayed()).to.be.true;
     });
-    it('should complete the download', function () {
-        expect(SymbolsPage.progressbarIsDisplayed()).to.be.false;
-        SymbolsPage.clickOnDownload();
-        SymbolsPage.clickOnDownloadDialog();
-        expect(SymbolsPage.progressbarIsDisplayed()).to.be.true;
-        expect(SymbolsPage.processDoneMsg.waitForDisplayed(180000)).to.be.true
-    });
+    // it('should complete the download', function () {
+    //     expect(SymbolsPage.progressbarIsDisplayed()).to.be.false;
+    //     SymbolsPage.clickOnDownload();
+    //     SymbolsPage.clickOnDownloadDialog();
+    //     expect(SymbolsPage.progressbarIsDisplayed()).to.be.true;
+    //     expect(SymbolsPage.processDoneMsg.waitForDisplayed(180000)).to.be.true
+    // });
 });

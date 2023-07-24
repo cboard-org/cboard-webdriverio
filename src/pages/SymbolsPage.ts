@@ -64,17 +64,6 @@ class SymbolsPage extends BasePage {
     processDoneIsDisplayed() {
         return this.processDoneMsg.isDisplayed();
     }
-
-    skipTour() {
-        browser.pause(2000);
-        if (this.closeTourButton.isDisplayed()) {
-            this.closeTourButton.click();
-        }
-        browser.pause(2000);
-        if (this.closeTourButton.isDisplayed()) {
-            this.closeTourButton.click();
-        }
-        browser.pause(2000);
-    }}
+}
 
 export default new SymbolsPage();
