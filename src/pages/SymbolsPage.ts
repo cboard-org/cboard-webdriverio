@@ -35,12 +35,6 @@ class SymbolsPage extends BasePage {
      * define or overwrite page methods
      */
     open() {
-        browser.url('/');
-        WelcomeAppPage.loginSkip();
-        RootAppPage.skipTour();
-        RootAppPage.unblockSettings();
-        RootAppPage.clickOnSetttings();
-        this.skipTour();
         SettingsAppPage.clickOnSymbols();
         this.pageH6.waitForDisplayed(4000);
     }
