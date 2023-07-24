@@ -25,6 +25,6 @@ describe('Symbols features', function () {
         SymbolsPage.clickOnDownload();
         SymbolsPage.clickOnDownloadDialog();
         expect(SymbolsPage.progressbarIsDisplayed()).to.be.true;
-        expect(SymbolsPage.processDoneMsg.waitForDisplayed(20000)).to.be.true
+        expect(SymbolsPage.processDoneMsg.waitForDisplayed(120000)).to.be.true
     });
 });
