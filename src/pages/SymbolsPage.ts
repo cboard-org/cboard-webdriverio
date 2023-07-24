@@ -25,7 +25,7 @@ class SymbolsPage extends BasePage {
         return $('//*[contains(aria-labelledby,"download-arasaac")]');
     }
     get downloadButtonDialog() {
-        return $('//*[contains(aria-labelledby,"download-arasaac")]//button[contains(.,"Download")]');
+        return $('//button[contains(.,"Download")]');
     }
     get progressBar() {
         return $('//*[contains(role,"progressbar")]');
