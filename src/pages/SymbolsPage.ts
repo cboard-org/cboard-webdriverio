@@ -21,11 +21,11 @@ class SymbolsPage extends BasePage {
     get deleteButton() {
         return $('//button[contains(.,"Delete")]');
     }
-    get downloaDialog() {
-        return $('//*[contains(aria-labelledby,"download-arasaac")]');
+    get downloadDialog() {
+        return $('//div[@aria-labelledby="download-arasaac"]');
     }
     get downloadButtonDialog() {
-        return $('//button[contains(.,"Download")]');
+        return $('//div[@aria-labelledby="download-arasaac"]//button[contains(.,"Download")]');
     }
     get progressBar() {
         return $('//*[contains(role,"progressbar")]');
