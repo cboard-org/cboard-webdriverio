@@ -30,6 +30,9 @@ class SymbolsPage extends BasePage {
     get progressBar() {
         return $('//div[@role="progressbar"]');
     }
+    get processDoneMsg() {
+        return $('//span[contains(.,"Process Done!")]');
+    }
 
     /**
      * define or overwrite page methods
@@ -57,6 +60,9 @@ class SymbolsPage extends BasePage {
 
     progressbarIsDisplayed() {
         return this.progressBar.isDisplayed();
+    }
+    processDoneIsDisplayed() {
+        return this.processDoneMsg.isDisplayed();
     }
 
     skipTour() {
