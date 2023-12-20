@@ -299,7 +299,7 @@ class RootAppPage extends BasePage {
   async isCachingImagesMsgDisplayed() {
     const el = await this.contentCachedMessage;
     try {
-      await el.waitForDisplayed(62000);
+      await el.waitForDisplayed(92000);
       return true;
     } catch (err) {
       return false;
