@@ -22,13 +22,19 @@ jobs:
           - yarn-packages-v1-{{ .Branch }}-
           - yarn-packages-v1-
     # Install and save node_modules to cache
-    - run: yarn install  --ignore-engines --ignore-platform --cache-folder ~/.cache/yarn
+    - run:
+        name: Install dependencies
+        command: |
+          yarn install  --ignore-engines --ignore-platform --cache-folder ~/.cache/yarn
     - save_cache:
         paths:
           - ~/.cache/yarn
         key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
     # run tests!
-    - run: yarn test --spec << pipeline.parameters.testname >>
+    - run:
+        name: Run wdio tests
+        command: |
+          yarn test --spec << pipeline.parameters.testname >>
     - store_test_results:
         path: test-results
 
