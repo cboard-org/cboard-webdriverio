@@ -34,7 +34,9 @@ jobs:
     - run:
         name: Run wdio tests
         command: |
-          yarn test --spec << pipeline.parameters.testname >>
+          TEST_FILES=$(circleci tests glob "**/test/*.spec.ts"
+          echo "$TEST_FILES" 
+        # yarn test --spec << pipeline.parameters.testname >>
     - store_test_results:
         path: test-results
 
