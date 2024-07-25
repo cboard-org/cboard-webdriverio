@@ -10,8 +10,7 @@ describe('Create pictograms page', function() {
     CreatePictoAppPage.open();
   });
 
-  afterEach(function() {
-  });
+  afterEach(function() { });
 
   it('should create a new pictogram and display it in the current board', function() {
     var newLabel = randomstring.generate({
