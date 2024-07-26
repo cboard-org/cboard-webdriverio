@@ -11,7 +11,7 @@ class RootAppPage extends BasePage {
    * define elements
    */
   get rootboard() {
-    return $('h2=home');
+    return $('h2=Cboard Classic Home');
   }
   get unlock() {
     return $('//button[@aria-label="Unlock"]');
